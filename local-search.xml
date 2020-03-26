@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>EasyPermissions使用问题</title>
+    <link href="/2020/03/26/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/"/>
+    <url>/2020/03/26/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1-遇到的问题描述"><a href="#1-遇到的问题描述" class="headerlink" title="1. 遇到的问题描述"></a>1. 遇到的问题描述</h3><p>在启动界面使用EasyPermissions，这个界面有用到权限的申请，但是第一次拒绝权限后（未勾选不再提醒），下次再发起权限请求时，EasyPermissions的询问弹窗出现占满屏幕且背景颜色异常的迷一样的问题。但是在其他界面发起权限请求并不会出现这个问题。</p><h3 id="2-出现的问题效果图片"><a href="#2-出现的问题效果图片" class="headerlink" title="2. 出现的问题效果图片"></a>2. 出现的问题效果图片</h3><p><img src="http://image.wonear.space/WechatIMG23.jpeg" srcset="/img/loading.gif" alt="问题效果图片"></p><h3 id="3-问题分析和解决"><a href="#3-问题分析和解决" class="headerlink" title="3. 问题分析和解决"></a>3. 问题分析和解决</h3><p>一开始并没有去查看其他界面的弹窗效果，一直以为是EasyPermissions使用的问题，去issue找了半天没找到问题，百度也没有结果。自己源码翻了半天，没招，就去看了下其他界面的的权限请求弹窗效果，结果是正常的。</p><p>只有启动界面出现问题，那就好办了，查看了下启动界面的代码和主题，弹窗出现全屏显示，应该是被activity的主题影响了。</p><p>启动页设置的样式</p><pre><code class="android">&lt;style name=&quot;SplashStyle&quot; parent=&quot;AppTheme&quot;&gt;      &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;      &lt;item name=&quot;android:windowFullscreen&quot;&gt;true&lt;/item&gt;      &lt;item name=&quot;android:background&quot;&gt;@drawable/splash&lt;/item&gt;  &lt;/style&gt;</code></pre><p>排除一下发现下面这句话的锅</p><blockquote><pre><code>  &lt;item name=&quot;android:background&quot;&gt;@drawable/splash&lt;/item&gt;</code></pre></blockquote><p>这边为了优化启动的视觉效果，给app启动页预先设置背景，莫名的挖了个坑。</p><h3 id="4-解决方法"><a href="#4-解决方法" class="headerlink" title="4. 解决方法"></a>4. 解决方法</h3><p>既然是主题样式的问题，那么解决方法就简单了，给EasyPermissions的弹窗单独设置主题</p><pre><code class="xlm">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;resources&gt;    &lt;style name=&quot;EasyPermissions_theme&quot;&gt;        &lt;item name=&quot;android:layout_width&quot;&gt;wrap_content&lt;/item&gt;        &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;        &lt;item name=&quot;android:windowIsFloating&quot;&gt;true&lt;/item&gt;        &lt;item name=&quot;android:backgroundDimEnabled&quot;&gt;false&lt;/item&gt;        &lt;item name=&quot;android:background&quot;&gt;@null&lt;/item&gt;    &lt;/style&gt;&lt;/resources&gt;</code></pre><p>发起请求的代码</p><pre><code class="android">//        EasyPermissions.requestPermissions(getCurActivity(), rationale, requestCode, perms);        EasyPermissions.requestPermissions(                new PermissionRequest.Builder(getCurActivity(), requestCode, perms)                        .setRationale(rationale)                        .setPositiveButtonText(&quot;确定&quot;)                        .setNegativeButtonText(&quot;取消&quot;)                        .setTheme(R.style.EasyPermissions_theme)                        .build());    }</code></pre><p><img src="http://image.wonear.space/WechatIMG24.jpeg" srcset="/img/loading.gif" alt="最后效果"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>android开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>android</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>文章写作和发布备注</title>
     <link href="/2020/03/25/%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E5%92%8C%E5%8F%91%E5%B8%83%E5%A4%87%E6%B3%A8/"/>
     <url>/2020/03/25/%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E5%92%8C%E5%8F%91%E5%B8%83%E5%A4%87%E6%B3%A8/</url>
