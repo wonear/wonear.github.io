@@ -8,12 +8,12 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#2f4154">
+  <meta name="theme-color" content="#274c5e">
   <meta name="description" content="知识无限，当恒学之！">
   <meta name="author" content="wonear">
   <meta name="keywords" content="">
@@ -168,7 +168,7 @@
             
             <div class="markdown-body">
               <h3 id="1-遇到的问题描述"><a href="#1-遇到的问题描述" class="headerlink" title="1. 遇到的问题描述"></a>1. 遇到的问题描述</h3><p>在启动界面使用EasyPermissions，这个界面有用到权限的申请，但是第一次拒绝权限后（未勾选不再提醒），下次再发起权限请求时，EasyPermissions的询问弹窗出现占满屏幕且背景颜色异常的迷一样的问题。但是在其他界面发起权限请求并不会出现这个问题。</p>
-<h3 id="2-出现的问题效果图片"><a href="#2-出现的问题效果图片" class="headerlink" title="2. 出现的问题效果图片"></a>2. 出现的问题效果图片</h3><p><img src="http://image.wonear.space/WechatIMG23.jpeg" srcset="/img/loading.gif" alt="问题效果图片"></p>
+<h3 id="2-出现的问题效果图片"><a href="#2-出现的问题效果图片" class="headerlink" title="2. 出现的问题效果图片"></a>2. 出现的问题效果图片</h3><p><img src="http://image.wonear.space/WechatIMG23.jpeg?imageMogr2/thumbnail/400x600!" srcset="/img/loading.gif" alt="问题效果图片"></p>
 <h3 id="3-问题分析和解决"><a href="#3-问题分析和解决" class="headerlink" title="3. 问题分析和解决"></a>3. 问题分析和解决</h3><p>一开始并没有去查看其他界面的弹窗效果，一直以为是EasyPermissions使用的问题，去issue找了半天没找到问题，百度也没有结果。自己源码翻了半天，没招，就去看了下其他界面的的权限请求弹窗效果，结果是正常的。</p>
 <p>只有启动界面出现问题，那就好办了，查看了下启动界面的代码和主题，弹窗出现全屏显示，应该是被activity的主题影响了。</p>
 <p>启动页设置的样式</p>
@@ -205,7 +205,7 @@
                         .build());
 
     }</code></pre>
-<p><img src="http://image.wonear.space/WechatIMG24.jpeg" srcset="/img/loading.gif" alt="最后效果"></p>
+<p><img src="http://image.wonear.space/WechatIMG24.jpeg?imageMogr2/thumbnail/400x600!" srcset="/img/loading.gif" alt="最后效果"></p>
 
             </div>
             <hr>
