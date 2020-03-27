@@ -173,10 +173,10 @@ post-content strong {
   color: #fff;
 }
 .top-nav-collapse {
-  background-color: #cb7575;
+  background-color: #2b90d9;
 }
 .navbar-col-show {
-  background-color: #cb7575;
+  background-color: #2b90d9;
 }
 @media (max-width: 767px) {
   .navbar {
