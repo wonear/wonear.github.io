@@ -6,7 +6,7 @@ header,
   overflow-wrap: break-word;
 }
 body {
-  background-color: #00000000;
+  background-color: #fff;
   color: #3f4040;
 }
 body a {
@@ -173,10 +173,10 @@ post-content strong {
   color: #D09E88;
 }
 .top-nav-collapse {
-  background-color: #00000000;
+  background-color: #274c5e;
 }
 .navbar-col-show {
-  background-color: #00000000;
+  background-color: #274c5e;
 }
 @media (max-width: 767px) {
   .navbar {
