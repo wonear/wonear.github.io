@@ -158,25 +158,25 @@ post-content strong {
 .navbar {
   background-color: transparent;
   font-size: 0.875rem;
-  color: #D09E88;
+  color: #fff;
 }
 .navbar a {
-  color: #D09E88;
+  color: #fff;
 }
 .navbar a:hover {
   background-color: rgba(0,0,0,0.1);
 }
 .navbar-custom {
-  color: #D09E88;
+  color: #fff;
 }
 .navbar-custom a {
-  color: #D09E88;
+  color: #fff;
 }
 .top-nav-collapse {
-  background-color: #274c5e;
+  background-color: #cb7575;
 }
 .navbar-col-show {
-  background-color: #274c5e;
+  background-color: #cb7575;
 }
 @media (max-width: 767px) {
   .navbar {
