@@ -168,8 +168,7 @@
             
             <div class="markdown-body">
               <p>gradle.properties文件中定义的变量只能是key=value的形式，相比ext扩展变量的方式多了些局限性。</p>
-<p>类举编译版本号的定义和使用</p>
-<h5 id="1-定义方式"><a href="#1-定义方式" class="headerlink" title="1. 定义方式"></a>1. 定义方式</h5><p>定义变量方式直接在gradle.properties添加</p>
+<h3 id="类举编译版本号的定义和使用"><a href="#类举编译版本号的定义和使用" class="headerlink" title="类举编译版本号的定义和使用"></a>类举编译版本号的定义和使用</h3><h5 id="1-定义方式"><a href="#1-定义方式" class="headerlink" title="1. 定义方式"></a>1. 定义方式</h5><p>定义变量方式直接在gradle.properties添加</p>
 <pre><code class="gradle">#测试字段
 testKey=false
 COMPILESDKVERSION=29
@@ -183,7 +182,7 @@ buildToolsVersion: BUILDTOOLSVERSION</code></pre>
 <p>测试图<br><img src="http://image.wonear.space/g1.jpg" srcset="/img/loading.gif" alt="图1"></p>
 <p><img src="http://image.wonear.space/g2.jpg" srcset="/img/loading.gif" alt="图2"></p>
 <ol start="2">
-<li>这边定义的变量名称最好不要和gradle中的一些关键词同名，规范一点用大写字母等方式可能会好一点，当然如果非要消协非要和gradle中的关键词同名，那么也可以用另一种方式调用。<br>例如</li>
+<li>这边定义的变量名称最好不要和gradle中的一些关键词同名，规范一点用大写字母等方式可能会好一点，当然如果非要小写、非要和gradle中的关键词同名，那么也可以用另一种方式调用。<br>例如</li>
 </ol>
 <pre><code class="gradle">#gradle.properties文件定义
 compileSdkVersion=29
@@ -198,6 +197,21 @@ buildToolsVersion project.buildToolsVersion</code></pre>
             <div>
               <p>
                 
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/android%E5%BC%80%E5%8F%91/">android开发</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+                  <span>
+                <i class="iconfont icon-tag"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/gradle/">gradle</a>
+                    
+                  </span>
                 
               </p>
               
