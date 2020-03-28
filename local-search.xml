@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>使用gradle.properties来定义gradle常量</title>
+    <link href="/2020/03/28/%E4%BD%BF%E7%94%A8gradle-properties%E6%9D%A5%E5%AE%9A%E4%B9%89gradle%E5%B8%B8%E9%87%8F/"/>
+    <url>/2020/03/28/%E4%BD%BF%E7%94%A8gradle-properties%E6%9D%A5%E5%AE%9A%E4%B9%89gradle%E5%B8%B8%E9%87%8F/</url>
+    
+    <content type="html"><![CDATA[<p>gradle.properties文件中定义的变量只能是key=value的形式，相比ext扩展变量的方式多了些局限性。</p><p>类举编译版本号的定义和使用</p><h5 id="1-定义方式"><a href="#1-定义方式" class="headerlink" title="1. 定义方式"></a>1. 定义方式</h5><p>定义变量方式直接在gradle.properties添加</p><pre><code class="gradle">#测试字段testKey=falseCOMPILESDKVERSION=29BUILDTOOLSVERSION=29.0.2</code></pre><h5 id="2-使用方式"><a href="#2-使用方式" class="headerlink" title="2. 使用方式"></a>2. 使用方式</h5><pre><code class="gradle">compileSdkVersion: COMPILESDKVERSION.toInteger()buildToolsVersion: BUILDTOOLSVERSION</code></pre><p>定义和使用似乎比较方便，不需要在考虑写法什么的，反正就一种。….</p><h5 id="3-注意点"><a href="#3-注意点" class="headerlink" title="3.注意点"></a>3.注意点</h5><ol><li>gradle.properties定义的属性，在使用时拿到的默认是String类型的，所以有些地方需要自己进行类型转换，就像上面compileSdkVersion的使用一样。   </li></ol><p>测试图<br><img src="http://image.wonear.space/g1.jpg" srcset="/img/loading.gif" alt="图1"></p><p><img src="http://image.wonear.space/g2.jpg" srcset="/img/loading.gif" alt="图2"></p><ol start="2"><li>这边定义的变量名称最好不要和gradle中的一些关键词同名，规范一点用大写字母等方式可能会好一点，当然如果非要消协非要和gradle中的关键词同名，那么也可以用另一种方式调用。<br>例如</li></ol><pre><code class="gradle">#gradle.properties文件定义compileSdkVersion=29buildToolsVersion=29.0.2</code></pre><pre><code class="gradle">#使用compileSdkVersion project.compileSdkVersion.toInteger()buildToolsVersion project.buildToolsVersion</code></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>gradle自定义常量配置</title>
     <link href="/2020/03/28/gradle%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E9%85%8D%E7%BD%AE/"/>
     <url>/2020/03/28/gradle%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E9%85%8D%E7%BD%AE/</url>
