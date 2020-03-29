@@ -133,7 +133,7 @@
                   
                   <span class="post-meta">
                     <i class="far fa-chart-bar"></i>
-                    296 字
+                    386 字
                   </span>
                 
 
@@ -170,7 +170,7 @@
           <div class="post-content mx-auto" id="post">
             
               <p
-                class="note note-warning">本文最后更新于：星期六, 三月 28日 2020, 4:40 下午</p>
+                class="note note-warning">本文最后更新于：星期日, 三月 29日 2020, 11:33 中午</p>
             
             <div class="markdown-body">
               <p>在之前的项目开发中一直有个困扰，当项目做大时，各种文件数量就变得非常多，很多时候找一个文件就要找很久，包名下的代码文件可以自己建包来做区分，还好办一点，但是资源文件，像布局、图片、样式这些没有模块化，经常忘记名字然后找半天找不到。实在是造成很多困扰，后面才发现可以利用gradle来进行资源的模块化处理。</p>
@@ -204,6 +204,7 @@ this.android.sourceSets {
 <p>res.srcDirs对应的集合里可以指定多个自己定义的资源包路径，同步gradle后就能发现</p>
 <p><img src="http://image.wonear.space/g3.jpg" srcset="/img/loading.gif" alt="图例"></p>
 <p>res_test和res的功能是一样的，这样就可以建立多个模块，然后把对应模块的资源进行区分</p>
+<p>通过srcDirs指定的文件夹会变成和原来res文件夹具有同样的功能，所以这个文件夹放在项目中哪个地方都可以，只要这边指定的路径正确，那个文件夹就会变成另一个res文件夹，但是要注意不要在多个放置相同名称的资源。</p>
 
             </div>
             <hr>
