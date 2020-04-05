@@ -17,7 +17,7 @@
   <meta name="description" content="知识无限，当恒学之！">
   <meta name="author" content="wonear">
   <meta name="keywords" content="">
-  <title>归档 - Inn</title>
+  <title>app内图片灰色效果实现 - Inn</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -43,7 +43,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -121,6 +121,34 @@
             </span>
 
             
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期日, 四月 5日 2020, 11:11 晚上
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    261 字
+                  </span>
+                
+
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  <span id="busuanzi_container_page_pv" class="post-meta" style="display: none">
+                    <i class="far fa-eye" aria-hidden="true"></i>
+                    浏览次数 <span id="busuanzi_value_page_pv"></span> 次
+                  </span>
+                
+              </p>
+            
           </div>
 
           
@@ -131,61 +159,109 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 5 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/2020/04/05/app%E5%86%85%E5%9B%BE%E7%89%87%E7%81%B0%E8%89%B2%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">app内图片灰色效果实现</span>
-      <span style="float: right;">04-05</span>
-    </a>
-  
-    
-    <a href="/2020/03/28/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Android项目中资源文件分模块的方法</span>
-      <span style="float: right;">03-28</span>
-    </a>
-  
-    
-    <a href="/2020/03/28/%E4%BD%BF%E7%94%A8gradle-properties%E6%9D%A5%E5%AE%9A%E4%B9%89gradle%E5%B8%B8%E9%87%8F/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">使用gradle.properties来定义gradle常量</span>
-      <span style="float: right;">03-28</span>
-    </a>
-  
-    
-    <a href="/2020/03/28/gradle%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E9%85%8D%E7%BD%AE/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">gradle自定义常量配置</span>
-      <span style="float: right;">03-28</span>
-    </a>
-  
-    
-    <a href="/2020/03/26/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">EasyPermissions使用问题</span>
-      <span style="float: right;">03-26</span>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+              <p
+                class="note note-warning">本文最后更新于：星期日, 四月 5日 2020, 11:29 晚上</p>
+            
+            <div class="markdown-body">
+              <p>2020年是令人难忘的一年，新型肺炎的肆虐，给全国人民带来了巨大的灾难。所幸国内的疫情已经受到控制，这次事件值得人们铭记。可以说这次国内能这么快控制住情况，起最大作用的是国家政府的英明决策和前线人员舍生忘死的战斗。向他们报以最高的敬意。</p>
+<p>为悼念新型肺炎牺牲的人员，清明节当天，几乎全网大厂app内效果都变成灰色，作为一个程序员，很好奇一个app是怎么做到全局改变显示效果的。偶然看懂鸿洋的一篇博客，简单记录下实现方式。</p>
+<p>在activity中添加代码</p>
+<pre><code class="android">Paint paint = new Paint();
+       ColorMatrix colorMatrix = new ColorMatrix();
+       colorMatrix.setSaturation(0);
+       paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+       getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE, paint);
+</code></pre>
+<p>这样就基本上可以实现app内颜色、图片置灰。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/EioJ8ogsCxQEFm44mKFiOQ" target="_blank" rel="noopener">App 黑白化实现探索2， 发现了一种更方便的方案，我被锤了！</a></li>
+</ul>
+</blockquote>
 
-
-              </div>
             </div>
+            <hr>
+            <div>
+              <p>
+                
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/android%E5%BC%80%E5%8F%91/">android开发</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+                  <span>
+                <i class="iconfont icon-tag"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9B%BE%E7%89%87%E6%95%88%E6%9E%9C/">图片效果</a>
+                    
+                  </span>
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/03/28/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/">
+                        <span class="hidden-mobile">Android项目中资源文件分模块的方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+              
+                <!-- Comments -->
+                <div class="comments" id="comments">
+                  
+                  
+
+                </div>
+              
           </div>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
   </main>
 
@@ -247,6 +323,59 @@
 
 
   <script  src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+      var tocLimMax = 2 * boardTop + boardCtn.height();
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = boardCtn.css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
 
 
 
@@ -321,7 +450,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "app内图片灰色效果实现&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
