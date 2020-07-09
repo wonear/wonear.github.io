@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.jpg">
-  <link rel="icon" type="image/png" href="/img/favicon.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="http://image.wonear.space/2CD8A425112C6C8F358A0A29BCB0EAF7.jpg">
+  <link rel="icon" type="image/png" href="http://image.wonear.space/2CD8A425112C6C8F358A0A29BCB0EAF7.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -26,7 +26,7 @@
   <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
   
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/idea.min.css" />
   
 
   
@@ -51,7 +51,7 @@
 
 
 <body>
-  <header style="height: 40vh;">
+  <header style="height: 50vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -139,7 +139,7 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('http://image.wonear.space/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -213,17 +213,17 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：3 个月前
+                  本文最后更新于：4 分钟前
                 
               </p>
             
             <article class="markdown-body">
               <p>gradle.properties文件中定义的变量只能是key=value的形式，相比ext扩展变量的方式多了些局限性。</p>
 <h3 id="类举编译版本号的定义和使用"><a href="#类举编译版本号的定义和使用" class="headerlink" title="类举编译版本号的定义和使用"></a>类举编译版本号的定义和使用</h3><h4 id="1-定义方式"><a href="#1-定义方式" class="headerlink" title="1. 定义方式"></a>1. 定义方式</h4><p>定义变量方式直接在gradle.properties添加</p>
-<pre><code class="hljs gradle">#测试字段
+<pre><code class="hljs java">#测试字段
 testKey=<span class="hljs-keyword">false</span>
 COMPILESDKVERSION=<span class="hljs-number">29</span>
-BUILDTOOLSVERSION=<span class="hljs-number">29.0</span>.<span class="hljs-number">2</span></code></pre>
+BUILDTOOLSVERSION=<span class="hljs-number">29.0</span>.2</code></pre>
 
 
 <h4 id="2-使用方式"><a href="#2-使用方式" class="headerlink" title="2. 使用方式"></a>2. 使用方式</h4><pre><code class="hljs gradle">compileSdkVersion: COMPILESDKVERSION.<span class="hljs-keyword">toInteger</span>()
@@ -238,13 +238,13 @@ buildToolsVersion: BUILDTOOLSVERSION</code></pre>
 <ol start="2">
 <li>这边定义的变量名称最好不要和gradle中的一些关键词同名，规范一点用大写字母等方式可能会好一点，当然如果非要小写、非要和gradle中的关键词同名，那么也可以用另一种方式调用。<br>例如</li>
 </ol>
-<pre><code class="hljs gradle">#gradle.properties文件定义
+<pre><code class="hljs java">#gradle.properties文件定义
 compileSdkVersion=<span class="hljs-number">29</span>
-buildToolsVersion=<span class="hljs-number">29.0</span>.<span class="hljs-number">2</span></code></pre>
-<pre><code class="hljs gradle">
+buildToolsVersion=<span class="hljs-number">29.0</span>.2</code></pre>
+<pre><code class="hljs java">
 #使用
-compileSdkVersion <span class="hljs-keyword">project</span>.compileSdkVersion.<span class="hljs-keyword">toInteger</span>()
-buildToolsVersion <span class="hljs-keyword">project</span>.buildToolsVersion</code></pre>
+compileSdkVersion project.compileSdkVersion.toInteger()
+buildToolsVersion project.buildToolsVersion</code></pre>
 
             </article>
             <hr>

@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.jpg">
-  <link rel="icon" type="image/png" href="/img/favicon.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="http://image.wonear.space/2CD8A425112C6C8F358A0A29BCB0EAF7.jpg">
+  <link rel="icon" type="image/png" href="http://image.wonear.space/2CD8A425112C6C8F358A0A29BCB0EAF7.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -26,7 +26,7 @@
   <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
   
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/idea.min.css" />
   
 
   
@@ -51,7 +51,7 @@
 
 
 <body>
-  <header style="height: 40vh;">
+  <header style="height: 50vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -139,7 +139,7 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('http://image.wonear.space/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      558 字
+      501 字
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      6
        分钟
     </span>
   
@@ -213,7 +213,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：3 个月前
+                  本文最后更新于：6 分钟前
                 
               </p>
             
@@ -223,36 +223,36 @@
 <h3 id="3-问题分析和解决"><a href="#3-问题分析和解决" class="headerlink" title="3. 问题分析和解决"></a>3. 问题分析和解决</h3><p>一开始并没有去查看其他界面的弹窗效果，一直以为是EasyPermissions使用的问题，去issue找了半天没找到问题，百度也没有结果。自己源码翻了半天，没招，就去看了下其他界面的的权限请求弹窗效果，结果是正常的。</p>
 <p>只有启动界面出现问题，那就好办了，查看了下启动界面的代码和主题，弹窗出现全屏显示，应该是被activity的主题影响了。</p>
 <p>启动页设置的样式</p>
-<pre><code class="hljs android">&lt;style name&#x3D;&quot;SplashStyle&quot; parent&#x3D;&quot;AppTheme&quot;&gt;
-      &lt;item name&#x3D;&quot;android:windowNoTitle&quot;&gt;true&lt;&#x2F;item&gt;
-      &lt;item name&#x3D;&quot;android:windowFullscreen&quot;&gt;true&lt;&#x2F;item&gt;
-      &lt;item name&#x3D;&quot;android:background&quot;&gt;@drawable&#x2F;splash&lt;&#x2F;item&gt;
-  &lt;&#x2F;style&gt;</code></pre>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"SplashStyle"</span> <span class="hljs-attr">parent</span>=<span class="hljs-string">"AppTheme"</span>&gt;</span>
+<span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:windowNoTitle"</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span>
+<span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:windowFullscreen"</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span>
+<span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:background"</span>&gt;</span>@drawable/splash<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 
 <p>排除一下发现下面这句话的锅</p>
 <blockquote>
 <pre><code>&lt;item name=&quot;android:background&quot;&gt;@drawable/splash&lt;/item&gt;</code></pre></blockquote>
 <p>这边为了优化启动的视觉效果，给app启动页预先设置背景，莫名的挖了个坑。</p>
 <h3 id="4-解决方法"><a href="#4-解决方法" class="headerlink" title="4. 解决方法"></a>4. 解决方法</h3><p>既然是主题样式的问题，那么解决方法就简单了，给EasyPermissions的弹窗单独设置主题</p>
-<pre><code class="hljs xlm">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;
-&lt;resources&gt;
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">resources</span>&gt;</span>
 
-    &lt;style name&#x3D;&quot;EasyPermissions_theme&quot;&gt;
-        &lt;item name&#x3D;&quot;android:layout_width&quot;&gt;wrap_content&lt;&#x2F;item&gt;
-        &lt;item name&#x3D;&quot;android:layout_height&quot;&gt;wrap_content&lt;&#x2F;item&gt;
-        &lt;item name&#x3D;&quot;android:windowIsFloating&quot;&gt;true&lt;&#x2F;item&gt;
-        &lt;item name&#x3D;&quot;android:backgroundDimEnabled&quot;&gt;false&lt;&#x2F;item&gt;
-        &lt;item name&#x3D;&quot;android:background&quot;&gt;@null&lt;&#x2F;item&gt;
-    &lt;&#x2F;style&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"EasyPermissions_theme"</span>&gt;</span>
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:layout_width"</span>&gt;</span>wrap_content<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span>
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:layout_height"</span>&gt;</span>wrap_content<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span>
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:windowIsFloating"</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span>
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:backgroundDimEnabled"</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span>
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:background"</span>&gt;</span>@null<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 
-&lt;&#x2F;resources&gt;</code></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">resources</span>&gt;</span></code></pre>
 <p>发起请求的代码</p>
-<pre><code class="hljs android">&#x2F;&#x2F;        EasyPermissions.requestPermissions(getCurActivity(), rationale, requestCode, perms);
+<pre><code class="hljs java"><span class="hljs-comment">//        EasyPermissions.requestPermissions(getCurActivity(), rationale, requestCode, perms);</span>
         EasyPermissions.requestPermissions(
-                new PermissionRequest.Builder(getCurActivity(), requestCode, perms)
+                <span class="hljs-keyword">new</span> PermissionRequest.Builder(getCurActivity(), requestCode, perms)
                         .setRationale(rationale)
-                        .setPositiveButtonText(&quot;确定&quot;)
-                        .setNegativeButtonText(&quot;取消&quot;)
+                        .setPositiveButtonText(<span class="hljs-string">"确定"</span>)
+                        .setNegativeButtonText(<span class="hljs-string">"取消"</span>)
                         .setTheme(R.style.EasyPermissions_theme)
                         .build());
 
