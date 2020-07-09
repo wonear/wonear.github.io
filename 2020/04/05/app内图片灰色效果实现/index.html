@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,7 +51,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 40vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      261 字
+      263 字
     </span>
   
 
@@ -221,12 +221,12 @@
               <p>2020年是令人难忘的一年，新型肺炎的肆虐，给全国人民带来了巨大的灾难。所幸国内的疫情已经受到控制，这次事件值得人们铭记。可以说这次国内能这么快控制住情况，起最大作用的是国家政府的英明决策和前线人员舍生忘死的战斗。向他们致以最高的敬意。</p>
 <p>为悼念新型肺炎牺牲的人员，清明节当天，几乎全网大厂app内效果都变成灰色，作为一个程序员，很好奇一个app是怎么做到全局改变显示效果的。偶然看懂鸿洋的一篇博客，简单记录下实现方式。</p>
 <p>在activity中添加代码</p>
-<pre><code class="android">       Paint paint = new Paint();
-       ColorMatrix colorMatrix = new ColorMatrix();
-       colorMatrix.setSaturation(0);
-       paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-       getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE, paint);
-</code></pre>
+<pre><code class="hljs android">Paint paint &#x3D; new Paint();
+ColorMatrix colorMatrix &#x3D; new ColorMatrix();
+colorMatrix.setSaturation(0);
+paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE, paint);</code></pre>
+
 <p>这样就基本上可以实现app内颜色、图片置灰。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>

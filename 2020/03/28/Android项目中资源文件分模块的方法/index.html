@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,7 +51,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 40vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      386 字
+      390 字
     </span>
   
 
@@ -222,30 +222,29 @@
 <p>资源分模块做起来其实很简单</p>
 <p>修改app模块下的build.gradle文件，在android闭包中添加sourceSets配置</p>
 <p>在与res文件同级的地方添加文件夹 res_test，然后在gradle文件中添加代码</p>
-<pre><code class="gradle">android {
+<pre><code class="hljs gradle">android &#123;
   ...
-sourceSets {
-      main {
-          res.srcDirs = [&#39;src/main/res&#39;, &#39;src/main/res_test&#39;]
-      }
-  }
-}
+<span class="hljs-keyword">sourceSets</span> &#123;
+      main &#123;
+          res.srcDirs = [<span class="hljs-string">'src/main/res'</span>, <span class="hljs-string">'src/main/res_test'</span>]
+      &#125;
+  &#125;
+&#125;
 
 
 -----------------------------------
 
 
 #或者在android外
-android{
+android&#123;
   ...
-}
-this.android.sourceSets {
-    main {
-      res.srcDirs = [&#39;src/main/res&#39;,&#39;src/main/res_test&#39;]
-    }
-}
+&#125;
+<span class="hljs-keyword">this</span>.android.<span class="hljs-keyword">sourceSets</span> &#123;
+    main &#123;
+      res.srcDirs = [<span class="hljs-string">'src/main/res'</span>,<span class="hljs-string">'src/main/res_test'</span>]
+    &#125;
+&#125;</code></pre>
 
-</code></pre>
 <p>res.srcDirs对应的集合里可以指定多个自己定义的资源包路径，同步gradle后就能发现</p>
 <p><img src="http://image.wonear.space/g3.jpg" srcset="/img/loading.gif" alt="图例"></p>
 <p>res_test和res的功能是一样的，这样就可以建立多个模块，然后把对应模块的资源进行区分</p>
