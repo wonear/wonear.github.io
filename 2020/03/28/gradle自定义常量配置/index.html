@@ -180,6 +180,14 @@
 
   
   
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
 </div>
 
             
@@ -202,6 +210,12 @@
       <div class="container nopadding-md" id="board-ctn">
         <div class="py-5" id="board">
           <div class="post-content mx-auto" id="post">
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：3 个月前
+                
+              </p>
             
             <article class="markdown-body">
               <h3 id="1-gradle自定义常量的原因"><a href="#1-gradle自定义常量的原因" class="headerlink" title="1. gradle自定义常量的原因"></a>1. gradle自定义常量的原因</h3><p>在多module中，gradle文件里存在大量常量，而且基本上是相同的。在项目或者依赖库版本升级的时候，修改起来十分的不友好。一两个module时可能无所谓，但是正常开发中可能涉及到十几个module的情况，一方面是修改起来十分不友好，工作量太大，一方面可能出现漏改的情况，导致依赖冲突、打包失败等的问题。这个时候就可以通过自定义全局常量来改变这种情况。</p>
@@ -478,6 +492,31 @@ task clean(type: Delete) {
         <span>Fluid</span></a>
     </div>
     
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
 
     
 

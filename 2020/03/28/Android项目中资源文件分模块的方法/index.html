@@ -180,6 +180,14 @@
 
   
   
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
 </div>
 
             
@@ -202,6 +210,12 @@
       <div class="container nopadding-md" id="board-ctn">
         <div class="py-5" id="board">
           <div class="post-content mx-auto" id="post">
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：3 个月前
+                
+              </p>
             
             <article class="markdown-body">
               <p>在之前的项目开发中一直有个困扰，当项目做大时，各种文件数量就变得非常多，很多时候找一个文件就要找很久，包名下的代码文件可以自己建包来做区分，还好办一点，但是资源文件，像布局、图片、样式这些没有模块化，经常忘记名字然后找半天找不到。实在是造成很多困扰，后面才发现可以利用gradle来进行资源的模块化处理。</p>
@@ -385,6 +399,31 @@ this.android.sourceSets {
         <span>Fluid</span></a>
     </div>
     
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
 
     
 
