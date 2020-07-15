@@ -4,125 +4,76 @@
   
   
   <entry>
-    <title>app内图片灰色效果实现</title>
-    <link href="/2020/04/05/app%E5%86%85%E5%9B%BE%E7%89%87%E7%81%B0%E8%89%B2%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/"/>
-    <url>/2020/04/05/app%E5%86%85%E5%9B%BE%E7%89%87%E7%81%B0%E8%89%B2%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/</url>
+    <title>那年冬天</title>
+    <link href="/2020/07/15/%E9%82%A3%E5%B9%B4%E5%86%AC%E5%A4%A9/"/>
+    <url>/2020/07/15/%E9%82%A3%E5%B9%B4%E5%86%AC%E5%A4%A9/</url>
     
-    <content type="html"><![CDATA[<p>2020年是令人难忘的一年，新型肺炎的肆虐，给全国人民带来了巨大的灾难。所幸国内的疫情已经受到控制，这次事件值得人们铭记。可以说这次国内能这么快控制住情况，起最大作用的是国家政府的英明决策和前线人员舍生忘死的战斗。向他们致以最高的敬意。</p><p>为悼念新型肺炎牺牲的人员，清明节当天，几乎全网大厂app内效果都变成灰色，作为一个程序员，很好奇一个app是怎么做到全局改变显示效果的。偶然看懂鸿洋的一篇博客，简单记录下实现方式。</p><p>在activity中添加代码   </p><pre><code class="hljs java">Paint paint = <span class="hljs-keyword">new</span> Paint();ColorMatrix colorMatrix = <span class="hljs-keyword">new</span> ColorMatrix();colorMatrix.setSaturation(<span class="hljs-number">0</span>);paint.setColorFilter(<span class="hljs-keyword">new</span> ColorMatrixColorFilter(colorMatrix));getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE, paint);</code></pre><p>这样就基本上可以实现app内颜色、图片置灰。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://mp.weixin.qq.com/s/EioJ8ogsCxQEFm44mKFiOQ" target="_blank" rel="noopener">App 黑白化实现探索2， 发现了一种更方便的方案，我被锤了！</a></li></ul></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="那年冬天"><a href="#那年冬天" class="headerlink" title="那年冬天"></a>那年冬天</h1><p>风开始有点凉了，就在走过街口转角的那一刹那，似乎是预谋已久，出其不意的让我打了一个冷颤。</p><p>那一瞬间的感觉似曾相识，刹那脑海中便浮现出一副场景。或许是内心的酒又渐浓了。</p><p>那是去年的春天，我还在杭州，周末的早晨里带着蒙蒙的雨丝，没有带伞，迎面而来一丝丝的冰凉。路上的人很少，不像现在那样满街炫歌热曲。朝气里带着清凉，人内心里总会觉得安宁。记忆中最深刻的是一处青石拱桥，在老家的时候并不常见，我走过去站在桥上面，有桥自然是要看水的，我转头顺着小河看去的时候，是真的感到惊讶。潺潺流水悄悄流淌，绿波上面白雾氤绕，河岸两旁绿柳依依，柳条垂下随风飘拂，鸟儿轻谣。树舞鸟吟风带笑，烟波袅袅柳飘飘，当时脑海里突然就旧蹦出来这么一句，总感觉自己词穷，现在总算证明这个事实，那是一种我无法描述的意境。</p><p>一件事情，记得他的坏记的他的好，心情有时欣喜有时苦恼，这是当初认定的人生姿态。余生不该是一滩死水。美好的意境该有一个合适的心情才能品味，然而此刻却是太过急躁。</p><p>不愿去过别人安排的人生，自己前行总会多些坎坷。</p><p>毕业三年，书生意气竟丝毫不减。往日里总执着着人情事故，那是别人告诉我的，出社会了，人就该“通达”。然而，这对我来说似乎太难了，我事事强求，却总是求而不得，总想着面面俱到，却是漏洞百出，想想还是回来做个熟悉的“呆子”比较舒畅。</p><p>我的性格在前二十年就成型了，突然要变成另一个样子，未免也太过为难了一些。情感这种东西，或许大家都会适应的，一切随其自然。</p>]]></content>
     
     
     <categories>
       
-      <category>android开发</category>
+      <category>随笔</category>
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>图片效果</tag>
-      
-    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>Android项目中资源文件分模块的方法</title>
-    <link href="/2020/03/28/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <url>/2020/03/28/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <title>幸福</title>
+    <link href="/2020/07/15/%E5%B9%B8%E7%A6%8F/"/>
+    <url>/2020/07/15/%E5%B9%B8%E7%A6%8F/</url>
     
-    <content type="html"><![CDATA[<p>在之前的项目开发中一直有个困扰，当项目做大时，各种文件数量就变得非常多，很多时候找一个文件就要找很久，包名下的代码文件可以自己建包来做区分，还好办一点，但是资源文件，像布局、图片、样式这些没有模块化，经常忘记名字然后找半天找不到。实在是造成很多困扰，后面才发现可以利用gradle来进行资源的模块化处理。</p><p>资源分模块做起来其实很简单</p><p>修改app模块下的build.gradle文件，在android闭包中添加sourceSets配置</p><p>在与res文件同级的地方添加文件夹 res_test，然后在gradle文件中添加代码</p><pre><code class="hljs java">android &#123;  ...sourceSets &#123;      main &#123;          res.srcDirs = [<span class="hljs-string">'src/main/res'</span>, <span class="hljs-string">'src/main/res_test'</span>]      &#125;  &#125;&#125;-----------------------------------#或者在android外android&#123;  ...&#125;<span class="hljs-keyword">this</span>.android.sourceSets &#123;    main &#123;      res.srcDirs = [<span class="hljs-string">'src/main/res'</span>,<span class="hljs-string">'src/main/res_test'</span>]    &#125;&#125;</code></pre><p>res.srcDirs对应的集合里可以指定多个自己定义的资源包路径，同步gradle后就能发现</p><p><img src="http://image.wonear.space/g3.jpg" srcset="/img/loading.gif" alt="图例"></p><p>res_test和res的功能是一样的，这样就可以建立多个模块，然后把对应模块的资源进行区分</p><p>通过srcDirs指定的文件夹会变成和原来res文件夹具有同样的功能，所以这个文件夹放在项目中哪个地方都可以，只要这边指定的路径正确，那个文件夹就会变成另一个res文件夹，但是要注意不要在多个放置相同名称的资源。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="幸福"><a href="#幸福" class="headerlink" title="幸福"></a>幸福</h1><p>三月，正值厦门的雨季，清冷的夜风里带着水汽，格外使人清醒，琐事繁多，所思所虑也过于繁多，往往就此无法入眠。</p><p>每次夜深人静的思考，其实都很难有一次能比较深刻，因为缺乏生活的实践。从离开学校，步入社会开始上班已经有一段时间了，已不记得有多少个像这样的夜晚，不断的反思自我，我想要的是什么？我该怎么做？很少有人能说服我，甚至连自己都不行，可能是因为我还没有想好自己想要的是什么，又或者因为我太过于急躁，急于求成吧。</p><p>记得之前部门聚会，老板提了要求，每个人围绕幸福，谈谈自己的看法。大部分的人看法都一致：在物质上的满足，有足够的金钱支配。这几年身边的人都几乎是同样的想法，似乎理该如此！！而我自己的看法是，提高自我的修养，从内心上强大，提高自我的承受能力，减少自身焦虑，很大程度上能提高自我的幸福度。</p><p>对于物质上的追求是必须的，或许也是无止境的。我觉得一个人的内心和思想达到一个程度，有足够的眼光和心态去面对生活中的苟且，就是幸福的。今天要求一辆车，明天追求一套房，后天…。人有追求才能进步，但是这个过程也需要一个良好的思想和心态去支撑，内在的才是根本的东西。</p><p>我只觉得自我的修养还不够，所以现在还有很多的琐碎烦恼，生活中也有意识地再往这方面思考。只是大部分的人想法都不一样，特别是现在这个物质发展十分迅速的时代，功利或许是一种典型的心态。众人皆醉我独醒，还是众人皆醒我独醉，或许还看个人内心。</p><p>谈到看法很多时候就有争论，争来争去，谁都没法说服谁，因为双方都是正确的，只是人的内心不同，立场不同，思想不同，追求的东西不一样罢了。你只要觉得你是对的，然后一往无前的去坚持，活的开心就可以了。</p>]]></content>
     
     
     <categories>
       
-      <category>android开发</category>
+      <category>随笔</category>
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>gradle</tag>
-      
-    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>使用gradle.properties来定义gradle常量</title>
-    <link href="/2020/03/28/%E4%BD%BF%E7%94%A8gradle-properties%E6%9D%A5%E5%AE%9A%E4%B9%89gradle%E5%B8%B8%E9%87%8F/"/>
-    <url>/2020/03/28/%E4%BD%BF%E7%94%A8gradle-properties%E6%9D%A5%E5%AE%9A%E4%B9%89gradle%E5%B8%B8%E9%87%8F/</url>
+    <title>少年</title>
+    <link href="/2020/07/15/%E5%B0%91%E5%B9%B4/"/>
+    <url>/2020/07/15/%E5%B0%91%E5%B9%B4/</url>
     
-    <content type="html"><![CDATA[<p>gradle.properties文件中定义的变量只能是key=value的形式，相比ext扩展变量的方式多了些局限性。</p><h3 id="类举编译版本号的定义和使用"><a href="#类举编译版本号的定义和使用" class="headerlink" title="类举编译版本号的定义和使用"></a>类举编译版本号的定义和使用</h3><h4 id="1-定义方式"><a href="#1-定义方式" class="headerlink" title="1. 定义方式"></a>1. 定义方式</h4><p>定义变量方式直接在gradle.properties添加</p><pre><code class="hljs java">#测试字段testKey=<span class="hljs-keyword">false</span>COMPILESDKVERSION=<span class="hljs-number">29</span>BUILDTOOLSVERSION=<span class="hljs-number">29.0</span>.2</code></pre><h4 id="2-使用方式"><a href="#2-使用方式" class="headerlink" title="2. 使用方式"></a>2. 使用方式</h4><pre><code class="hljs gradle">compileSdkVersion: COMPILESDKVERSION.<span class="hljs-keyword">toInteger</span>()buildToolsVersion: BUILDTOOLSVERSION</code></pre><p>定义和使用似乎比较方便，不需要在考虑写法什么的，反正就一种。….</p><h4 id="3-注意点"><a href="#3-注意点" class="headerlink" title="3.注意点"></a>3.注意点</h4><ol><li>gradle.properties定义的属性，在使用时拿到的默认是String类型的，所以有些地方需要自己进行类型转换，就像上面compileSdkVersion的使用一样。   </li></ol><p>测试图<br><img src="http://image.wonear.space/g1.jpg" srcset="/img/loading.gif" alt="图1"></p><p><img src="http://image.wonear.space/g2.jpg" srcset="/img/loading.gif" alt="图2"></p><ol start="2"><li>这边定义的变量名称最好不要和gradle中的一些关键词同名，规范一点用大写字母等方式可能会好一点，当然如果非要小写、非要和gradle中的关键词同名，那么也可以用另一种方式调用。<br>例如</li></ol><pre><code class="hljs java">#gradle.properties文件定义compileSdkVersion=<span class="hljs-number">29</span>buildToolsVersion=<span class="hljs-number">29.0</span>.2</code></pre><pre><code class="hljs java">#使用compileSdkVersion project.compileSdkVersion.toInteger()buildToolsVersion project.buildToolsVersion</code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="少年"><a href="#少年" class="headerlink" title="少年"></a>少年</h1><p>千山万水走过，<br>青山已枯，<br>绿水成浊。</p><p>年少时忧郁成结，<br>落笔处皆是动人的诗。<br>曾想用一支笔写尽此生，<br>谁料事事皆难启齿。</p><p>那一天，<br>春雨绵绵，<br>你说再见，<br>渐行渐远在那个街头，<br>从此我的心中多了一条挥之不去的雨巷；</p><p>那一夜，<br>与你共进晚餐，<br>你说再见，<br>目送你的身影消失在昏黄的夜灯下，<br>你没回头，<br>看不到我的泪已千行；</p><p>灵思已尽难行笔，此生难求梦中人。</p>]]></content>
     
     
     <categories>
       
-      <category>android开发</category>
+      <category>随笔</category>
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>gradle</tag>
-      
-    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>gradle自定义常量配置</title>
-    <link href="/2020/03/28/gradle%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E9%85%8D%E7%BD%AE/"/>
-    <url>/2020/03/28/gradle%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E9%85%8D%E7%BD%AE/</url>
+    <title>问</title>
+    <link href="/2020/07/15/%E9%97%AE/"/>
+    <url>/2020/07/15/%E9%97%AE/</url>
     
-    <content type="html"><![CDATA[<h3 id="1-gradle自定义常量的原因"><a href="#1-gradle自定义常量的原因" class="headerlink" title="1. gradle自定义常量的原因"></a>1. gradle自定义常量的原因</h3><p>在多module中，gradle文件里存在大量常量，而且基本上是相同的。在项目或者依赖库版本升级的时候，修改起来十分的不友好。一两个module时可能无所谓，但是正常开发中可能涉及到十几个module的情况，一方面是修改起来十分不友好，工作量太大，一方面可能出现漏改的情况，导致依赖冲突、打包失败等的问题。这个时候就可以通过自定义全局常量来改变这种情况。</p><h3 id="2-自定义常量的方法"><a href="#2-自定义常量的方法" class="headerlink" title="2. 自定义常量的方法"></a>2. 自定义常量的方法</h3><p>gradle可以通过ext来自定义常量，要做到常量共用的话，就要在根节点下的build.gradle文件中进行常量定义。</p><h4 id="写法1"><a href="#写法1" class="headerlink" title="写法1"></a>写法1</h4> <pre><code class="hljs java">buildscript &#123;    repositories &#123;        google()        jcenter()    &#125;    dependencies &#123;        classpath <span class="hljs-string">'com.android.tools.build:gradle:3.6.1'</span>    &#125;&#125;allprojects &#123;    repositories &#123;        google()        jcenter()    &#125;&#125;<span class="hljs-function">task <span class="hljs-title">clean</span><span class="hljs-params">(type: Delete)</span> </span>&#123;    delete rootProject.buildDir&#125;ext &#123;    android = [            compileSdkVersion: <span class="hljs-number">29</span>,            buildToolsVersion: <span class="hljs-string">"29.0.2"</span>,            applicationId    : <span class="hljs-string">"com.geeboo.jetpackproject"</span>,            minSdkVersion    : <span class="hljs-number">16</span>,            targetSdkVersion : <span class="hljs-number">29</span>,            versionCode      : <span class="hljs-number">1</span>,            versionName      : <span class="hljs-string">"1.0"</span>    ]    libs = [            libAndroidAppcompat: <span class="hljs-string">'androidx.appcompat:appcompat:1.1.0'</span>,            libAndroidConstraintlayout: <span class="hljs-string">'androidx.constraintlayout:constraintlayout:1.1.3'</span>,            libJunit: <span class="hljs-string">'junit:junit:4.12'</span>,            libTestJunit: <span class="hljs-string">'androidx.test.ext:junit:1.1.1'</span>,            libTestEspresso: <span class="hljs-string">'androidx.test.espresso:espresso-core:3.2.0'</span>    ]&#125;</code></pre><p> 直接在build.gradle中进行定义，这种方式在自定义常量太多时，看起来似乎不太舒服，而且根结点的gradle中经常需要配置一些其他的东西，可能导致整个文件一大堆代码。所以还可以用插件的方式单独进行常量定义</p><h4 id="写法2"><a href="#写法2" class="headerlink" title="写法2"></a>写法2</h4><p>在根目录下创建一个common.gradle文件（文件名称随意）专门用来定义常量</p><pre><code class="hljs java">ext &#123;    android = [            compileSdkVersion: <span class="hljs-number">29</span>,            buildToolsVersion: <span class="hljs-string">"29.0.2"</span>,            applicationId    : <span class="hljs-string">"com.xxx.xxx"</span>,            minSdkVersion    : <span class="hljs-number">16</span>,            targetSdkVersion : <span class="hljs-number">29</span>,            versionCode      : <span class="hljs-number">1</span>,            versionName      : <span class="hljs-string">"1.0"</span>    ]    libs = [            libAndroidAppcompat: <span class="hljs-string">'androidx.appcompat:appcompat:1.1.0'</span>,            libAndroidConstraintlayout: <span class="hljs-string">'androidx.constraintlayout:constraintlayout:1.1.3'</span>,            libJunit: <span class="hljs-string">'junit:junit:4.12'</span>,            libTestJunit: <span class="hljs-string">'androidx.test.ext:junit:1.1.1'</span>,            libTestEspresso: <span class="hljs-string">'androidx.test.espresso:espresso-core:3.2.0'</span>    ]&#125;</code></pre><p>然后在根节点下的build.gradle中添加  <strong>apply from: file(‘common.gradle’)</strong></p><pre><code class="hljs java">apply from: file(<span class="hljs-string">'common.gradle'</span>)buildscript &#123;    repositories &#123;        google()        jcenter()    &#125;    dependencies &#123;        classpath <span class="hljs-string">'com.android.tools.build:gradle:3.6.1'</span>    &#125;&#125;allprojects &#123;    repositories &#123;        google()        jcenter()    &#125;&#125;<span class="hljs-function">task <span class="hljs-title">clean</span><span class="hljs-params">(type: Delete)</span> </span>&#123;    delete rootProject.buildDir&#125;</code></pre><h3 id="3-使用常量的方法"><a href="#3-使用常量的方法" class="headerlink" title="3. 使用常量的方法"></a>3. 使用常量的方法</h3> <pre><code class="hljs java">apply plugin: <span class="hljs-string">'com.android.application'</span>android &#123;    compileSdkVersion rootProject.ext.android.compileSdkVersion    buildToolsVersion rootProject.ext.android.buildToolsVersion    defaultConfig &#123;        applicationId rootProject.ext.android.applicationId        minSdkVersion rootProject.ext.android.minSdkVersion        targetSdkVersion rootProject.ext.android.targetSdkVersion        versionCode rootProject.ext.android.versionCode        versionName rootProject.ext.android.versionName        testInstrumentationRunner <span class="hljs-string">"androidx.test.runner.AndroidJUnitRunner"</span>    &#125;    buildTypes &#123;        release &#123;            minifyEnabled <span class="hljs-keyword">false</span>            <span class="hljs-function">proguardFiles <span class="hljs-title">getDefaultProguardFile</span><span class="hljs-params">(<span class="hljs-string">'proguard-android-optimize.txt'</span>)</span>, 'proguard-rules.pro'</span><span class="hljs-function">        &#125;</span><span class="hljs-function">    &#125;</span><span class="hljs-function"></span><span class="hljs-function">&#125;</span><span class="hljs-function"></span><span class="hljs-function">dependencies </span>&#123;    <span class="hljs-function">implementation <span class="hljs-title">fileTree</span><span class="hljs-params">(dir: <span class="hljs-string">'libs'</span>, include: [<span class="hljs-string">'*.jar'</span>])</span></span><span class="hljs-function">    implementation libs.libAndroidAppcompat</span><span class="hljs-function">    implementation libs.libAndroidConstraintlayout</span><span class="hljs-function">    testImplementation libs.libJunit</span><span class="hljs-function">    androidTestImplementation libs.libTestJunit</span><span class="hljs-function">    androidTestImplementation libs.libTestEspresso</span><span class="hljs-function">&#125;</span></code></pre><p> 跟未修改前的代码对比一下，修改后的看起来简直不能太爽。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>android开发</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>gradle</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>EasyPermissions使用问题</title>
-    <link href="/2020/03/26/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/"/>
-    <url>/2020/03/26/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/</url>
-    
-    <content type="html"><![CDATA[<h3 id="1-遇到的问题描述"><a href="#1-遇到的问题描述" class="headerlink" title="1. 遇到的问题描述"></a>1. 遇到的问题描述</h3><p>在启动界面使用EasyPermissions，这个界面有用到权限的申请，但是第一次拒绝权限后（未勾选不再提醒），下次再发起权限请求时，EasyPermissions的询问弹窗出现占满屏幕且背景颜色异常的迷一样的问题。但是在其他界面发起权限请求并不会出现这个问题。</p><h3 id="2-出现的问题效果图片"><a href="#2-出现的问题效果图片" class="headerlink" title="2. 出现的问题效果图片"></a>2. 出现的问题效果图片</h3><p><img src="http://image.wonear.space/WechatIMG23.jpeg?imageMogr2/thumbnail/400x600!" srcset="/img/loading.gif" alt="问题效果图片"></p><h3 id="3-问题分析和解决"><a href="#3-问题分析和解决" class="headerlink" title="3. 问题分析和解决"></a>3. 问题分析和解决</h3><p>一开始并没有去查看其他界面的弹窗效果，一直以为是EasyPermissions使用的问题，去issue找了半天没找到问题，百度也没有结果。自己源码翻了半天，没招，就去看了下其他界面的的权限请求弹窗效果，结果是正常的。</p><p>只有启动界面出现问题，那就好办了，查看了下启动界面的代码和主题，弹窗出现全屏显示，应该是被activity的主题影响了。</p><p>启动页设置的样式</p><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"SplashStyle"</span> <span class="hljs-attr">parent</span>=<span class="hljs-string">"AppTheme"</span>&gt;</span><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:windowNoTitle"</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:windowFullscreen"</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:background"</span>&gt;</span>@drawable/splash<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span>  <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre><p>排除一下发现下面这句话的锅</p><blockquote><pre><code>&lt;item name=&quot;android:background&quot;&gt;@drawable/splash&lt;/item&gt;</code></pre></blockquote><p>这边为了优化启动的视觉效果，给app启动页预先设置背景，莫名的挖了个坑。</p><h3 id="4-解决方法"><a href="#4-解决方法" class="headerlink" title="4. 解决方法"></a>4. 解决方法</h3><p>既然是主题样式的问题，那么解决方法就简单了，给EasyPermissions的弹窗单独设置主题</p><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">resources</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"EasyPermissions_theme"</span>&gt;</span><span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:layout_width"</span>&gt;</span>wrap_content<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span><span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:layout_height"</span>&gt;</span>wrap_content<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span><span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:windowIsFloating"</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span><span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:backgroundDimEnabled"</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span><span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"android:background"</span>&gt;</span>@null<span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span></span>    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">resources</span>&gt;</span></code></pre><p>发起请求的代码</p><pre><code class="hljs java"><span class="hljs-comment">//        EasyPermissions.requestPermissions(getCurActivity(), rationale, requestCode, perms);</span>        EasyPermissions.requestPermissions(                <span class="hljs-keyword">new</span> PermissionRequest.Builder(getCurActivity(), requestCode, perms)                        .setRationale(rationale)                        .setPositiveButtonText(<span class="hljs-string">"确定"</span>)                        .setNegativeButtonText(<span class="hljs-string">"取消"</span>)                        .setTheme(R.style.EasyPermissions_theme)                        .build());    &#125;</code></pre><p><img src="http://image.wonear.space/WechatIMG24.jpeg?imageMogr2/thumbnail/400x600!" srcset="/img/loading.gif" alt="最后效果"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="问"><a href="#问" class="headerlink" title="问"></a>问</h1><p>他们笑你，你便不敢？<br>害怕失去，你便不愿？<br>你想拥有一切，却为何要畏手畏脚？<br>为何你骨子里要带着优柔？</p>]]></content>
     
     
     <categories>
       
-      <category>android开发</category>
+      <category>随笔</category>
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>权限申请</tag>
-      
-    </tags>
     
   </entry>
   

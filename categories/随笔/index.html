@@ -17,7 +17,7 @@
   <meta name="description" content="知识无限，当恒学之！">
   <meta name="author" content="wonear">
   <meta name="keywords" content="">
-  <title>归档 - Inn</title>
+  <title>分类 - 随笔 - Inn</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -407,7 +407,7 @@
       if ('false' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/archives/2020/index.html');
+          var target = decodeURI('/categories/%E9%9A%8F%E7%AC%94/index.html');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -476,7 +476,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "分类 - 随笔&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
