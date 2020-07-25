@@ -17,7 +17,7 @@
   <meta name="description" content="知识无限，当恒学之！">
   <meta name="author" content="wonear">
   <meta name="keywords" content="">
-  <title>幸福 - Inn</title>
+  <title>app内图片灰色效果实现 - Inn</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -127,7 +127,7 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('http://image.wonear.space/8c15c035693a3be00106f6789f524cc5.jpg') no-repeat center center;
+         style="background: url('http://image.wonear.space/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -140,8 +140,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-07-15 19:34">
-      2020年7月15日 晚上
+    <time datetime="2020-07-25 12:16">
+      2020年7月25日 中午
     </time>
   </div>
 
@@ -151,7 +151,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      618 字
+      261 字
     </span>
   
 
@@ -161,7 +161,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      2
        分钟
     </span>
   
@@ -199,19 +199,22 @@
         <div class="py-5" id="board">
           <div class="post-content mx-auto" id="post">
             
-              <p class="note note-info">
-                
-                  本文最后更新于：12 分钟前
-                
-              </p>
-            
             <article class="markdown-body">
-              <h1 id="幸福"><a href="#幸福" class="headerlink" title="幸福"></a>幸福</h1><p>三月，正值厦门的雨季，清冷的夜风里带着水汽，格外使人清醒，琐事繁多，所思所虑也过于繁多，往往就此无法入眠。</p>
-<p>每次夜深人静的思考，其实都很难有一次能比较深刻，因为缺乏生活的实践。从离开学校，步入社会开始上班已经有一段时间了，已不记得有多少个像这样的夜晚，不断的反思自我，我想要的是什么？我该怎么做？很少有人能说服我，甚至连自己都不行，可能是因为我还没有想好自己想要的是什么，又或者因为我太过于急躁，急于求成吧。</p>
-<p>记得之前部门聚会，老板提了要求，每个人围绕幸福，谈谈自己的看法。大部分的人看法都一致：在物质上的满足，有足够的金钱支配。这几年身边的人都几乎是同样的想法，似乎理该如此！！而我自己的看法是，提高自我的修养，从内心上强大，提高自我的承受能力，减少自身焦虑，很大程度上能提高自我的幸福度。</p>
-<p>对于物质上的追求是必须的，或许也是无止境的。我觉得一个人的内心和思想达到一个程度，有足够的眼光和心态去面对生活中的苟且，就是幸福的。今天要求一辆车，明天追求一套房，后天…。人有追求才能进步，但是这个过程也需要一个良好的思想和心态去支撑，内在的才是根本的东西。</p>
-<p>我只觉得自我的修养还不够，所以现在还有很多的琐碎烦恼，生活中也有意识地再往这方面思考。只是大部分的人想法都不一样，特别是现在这个物质发展十分迅速的时代，功利或许是一种典型的心态。众人皆醉我独醒，还是众人皆醒我独醉，或许还看个人内心。</p>
-<p>谈到看法很多时候就有争论，争来争去，谁都没法说服谁，因为双方都是正确的，只是人的内心不同，立场不同，思想不同，追求的东西不一样罢了。你只要觉得你是对的，然后一往无前的去坚持，活的开心就可以了。</p>
+              <p>2020年是令人难忘的一年，新型肺炎的肆虐，给全国人民带来了巨大的灾难。所幸国内的疫情已经受到控制，这次事件值得人们铭记。可以说这次国内能这么快控制住情况，起最大作用的是国家政府的英明决策和前线人员舍生忘死的战斗。向他们致以最高的敬意。</p>
+<p>为悼念新型肺炎牺牲的人员，清明节当天，几乎全网大厂app内效果都变成灰色，作为一个程序员，很好奇一个app是怎么做到全局改变显示效果的。偶然看懂鸿洋的一篇博客，简单记录下实现方式。</p>
+<p>在activity中添加代码</p>
+<pre><code class="hljs java">Paint paint = <span class="hljs-keyword">new</span> Paint();
+ColorMatrix colorMatrix = <span class="hljs-keyword">new</span> ColorMatrix();
+colorMatrix.setSaturation(<span class="hljs-number">0</span>);
+paint.setColorFilter(<span class="hljs-keyword">new</span> ColorMatrixColorFilter(colorMatrix));
+getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE, paint);</code></pre>
+
+<p>这样就基本上可以实现app内颜色、图片置灰。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/EioJ8ogsCxQEFm44mKFiOQ" target="_blank" rel="noopener">App 黑白化实现探索2， 发现了一种更方便的方案，我被锤了！</a></li>
+</ul>
+</blockquote>
 
             </article>
             <hr>
@@ -221,23 +224,30 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                      <a class="hover-with-bg" href="/categories/%E6%95%88%E6%9E%9C/">效果</a>
                     
                   </div>
                 
                 
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/android/">android</a>
+                    
+                  </div>
+                
               </div>
               
-                <p class="note note-warning">本博客所有文章转载请注明出处！</p>
+                <p class="note note-warning">本博客所有文章转载请注明出处！http://blog.wonear.space/</p>
               
               
                 <div class="post-prevnext row">
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/07/15/%E9%82%A3%E5%B9%B4%E5%86%AC%E5%A4%A9/">
+                      <a href="/2020/07/25/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">那年冬天</span>
+                        <span class="hidden-mobile">Android项目中资源文件分模块的方法</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -245,8 +255,8 @@
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2020/07/15/%E5%B0%91%E5%B9%B4/">
-                        <span class="hidden-mobile">少年</span>
+                      <a href="/2020/07/25/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/">
+                        <span class="hidden-mobile">EasyPermissions使用问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -528,7 +538,7 @@
       if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/2020/07/15/%E5%B9%B8%E7%A6%8F/');
+          var target = decodeURI('/2020/07/25/app%E5%86%85%E5%9B%BE%E7%89%87%E7%81%B0%E8%89%B2%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -622,7 +632,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "幸福&nbsp;",
+        "app内图片灰色效果实现&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

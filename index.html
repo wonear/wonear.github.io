@@ -151,36 +151,113 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/07/15/%E9%82%A3%E5%B9%B4%E5%86%AC%E5%A4%A9/" target="_self">
-          <img src="http://image.wonear.space/e03c6f36c983512c10752cd7d37163ec.jpg" srcset="/img/loading.gif" alt="那年冬天">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/07/15/%E9%82%A3%E5%B9%B4%E5%86%AC%E5%A4%A9/">那年冬天</a>
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/25/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/">Android项目中资源文件分模块的方法</a>
 
-      <a href="/2020/07/15/%E9%82%A3%E5%B9%B4%E5%86%AC%E5%A4%A9/" class="index-excerpt">
+      <a href="/2020/07/25/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/" class="index-excerpt">
         
         
           
         
-        <div>那年冬天风开始有点凉了，就在走过街口转角的那一刹那，似乎是预谋已久，出其不意的让我打了一个冷颤。
-那一瞬间的感觉似曾相识，刹那脑海中便浮现出一副场景。或许是内心的酒又渐浓了。
-那是去年的春天，我还在杭州，周末的早晨里带着蒙蒙的雨丝，没有带伞，迎面而来一丝丝的冰凉。路上的人很少，不像现在那样满街炫歌热曲。朝气里带着清凉，人内心里总会觉得安宁。记忆中最深刻的是一处青石拱桥，在老家的时候并不常见，我走过</div>
+        <div>在之前的项目开发中一直有个困扰，当项目做大时，各种文件数量就变得非常多，很多时候找一个文件就要找很久，包名下的代码文件可以自己建包来做区分，还好办一点，但是资源文件，像布局、图片、样式这些没有模块化，经常忘记名字然后找半天找不到。实在是造成很多困扰，后面才发现可以利用gradle来进行资源的模块化处理。
+资源分模块做起来其实很简单
+修改app模块下的build.gradle文件，在android闭</div>
       </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-07-15
+            <i class="iconfont icon-date"></i>&nbsp;2020-07-25
           </div>
         
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+              <a href="/categories/gradle/">gradle</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/android/">android</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/25/app%E5%86%85%E5%9B%BE%E7%89%87%E7%81%B0%E8%89%B2%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/">app内图片灰色效果实现</a>
+
+      <a href="/2020/07/25/app%E5%86%85%E5%9B%BE%E7%89%87%E7%81%B0%E8%89%B2%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/" class="index-excerpt">
+        
+        
+          
+        
+        <div>2020年是令人难忘的一年，新型肺炎的肆虐，给全国人民带来了巨大的灾难。所幸国内的疫情已经受到控制，这次事件值得人们铭记。可以说这次国内能这么快控制住情况，起最大作用的是国家政府的英明决策和前线人员舍生忘死的战斗。向他们致以最高的敬意。
+为悼念新型肺炎牺牲的人员，清明节当天，几乎全网大厂app内效果都变成灰色，作为一个程序员，很好奇一个app是怎么做到全局改变显示效果的。偶然看懂鸿洋的一篇博客，简</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-07-25
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%88%E6%9E%9C/">效果</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/android/">android</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/25/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/">EasyPermissions使用问题</a>
+
+      <a href="/2020/07/25/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/" class="index-excerpt">
+        
+        
+          
+        
+        <div>1. 遇到的问题描述在启动界面使用EasyPermissions，这个界面有用到权限的申请，但是第一次拒绝权限后（未勾选不再提醒），下次再发起权限请求时，EasyPermissions的询问弹窗出现占满屏幕且背景颜色异常的迷一样的问题。但是在其他界面发起权限请求并不会出现这个问题。
+2. 出现的问题效果图片
+3. 问题分析和解决一开始并没有去查看其他界面的弹窗效果，一直以为是EasyPermiss</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-07-25
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%9D%83%E9%99%90/">权限</a>
             
           </div>
         
@@ -192,38 +269,40 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/07/15/%E5%B9%B8%E7%A6%8F/" target="_self">
-          <img src="http://image.wonear.space/8c15c035693a3be00106f6789f524cc5.jpg" srcset="/img/loading.gif" alt="幸福">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/07/15/%E5%B9%B8%E7%A6%8F/">幸福</a>
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/25/gradle%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E9%85%8D%E7%BD%AE/">使用gradle-properties来定义gradle常量</a>
 
-      <a href="/2020/07/15/%E5%B9%B8%E7%A6%8F/" class="index-excerpt">
+      <a href="/2020/07/25/gradle%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E9%85%8D%E7%BD%AE/" class="index-excerpt">
         
         
           
         
-        <div>幸福三月，正值厦门的雨季，清冷的夜风里带着水汽，格外使人清醒，琐事繁多，所思所虑也过于繁多，往往就此无法入眠。
-每次夜深人静的思考，其实都很难有一次能比较深刻，因为缺乏生活的实践。从离开学校，步入社会开始上班已经有一段时间了，已不记得有多少个像这样的夜晚，不断的反思自我，我想要的是什么？我该怎么做？很少有人能说服我，甚至连自己都不行，可能是因为我还没有想好自己想要的是什么，又或者因为我太过于急躁，</div>
+        <div>
+1. gradle自定义常量的原因在多module中，gradle文件里存在大量常量，而且基本上是相同的。在项目或者依赖库版本升级的时候，修改起来十分的不友好。一两个module时可能无所谓，但是正常开发中可能涉及到十几个module的情况，一方面是修改起来十分不友好，工作量太大，一方面可能出现漏改的情况，导致依赖冲突、打包失败等的问题。这个时候就可以通过自定义全局常量来改变这种情况。
+2. 自</div>
       </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-07-15
+            <i class="iconfont icon-date"></i>&nbsp;2020-07-25
           </div>
         
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+              <a href="/categories/gradle/">gradle</a>
             
           </div>
         
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/android/">android</a>
+            
+          </div>
         
       </div>
     </div>
@@ -232,82 +311,45 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/07/15/%E5%B0%91%E5%B9%B4/" target="_self">
-          <img src="http://image.wonear.space/666374ff2935cf2c32240ff5a8e09d66.jpg" srcset="/img/loading.gif" alt="少年">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/07/15/%E5%B0%91%E5%B9%B4/">少年</a>
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/25/%E4%BD%BF%E7%94%A8gradle-properties%E6%9D%A5%E5%AE%9A%E4%B9%89gradle%E5%B8%B8%E9%87%8F/">使用gradle-properties来定义gradle常量</a>
 
-      <a href="/2020/07/15/%E5%B0%91%E5%B9%B4/" class="index-excerpt">
+      <a href="/2020/07/25/%E4%BD%BF%E7%94%A8gradle-properties%E6%9D%A5%E5%AE%9A%E4%B9%89gradle%E5%B8%B8%E9%87%8F/" class="index-excerpt">
         
         
           
         
-        <div>少年千山万水走过，青山已枯，绿水成浊。
-年少时忧郁成结，落笔处皆是动人的诗。曾想用一支笔写尽此生，谁料事事皆难启齿。
-那一天，春雨绵绵，你说再见，渐行渐远在那个街头，从此我的心中多了一条挥之不去的雨巷；
-那一夜，与你共进晚餐，你说再见，目送你的身影消失在昏黄的夜灯下，你没回头，看不到我的泪已千行；
-灵思已尽难行笔，此生难求梦中人。
-</div>
+        <div>gradle.properties文件中定义的变量只能是key=value的形式，相比ext扩展变量的方式多了些局限性。
+类举编译版本号的定义和使用1. 定义方式定义变量方式直接在gradle.properties添加
+#测试字段
+testKey=false
+COMPILESDKVERSION=29
+BUILDTOOLSVERSION=29.0.2
+
+2. 使用方式compileSdkVersio</div>
       </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-07-15
+            <i class="iconfont icon-date"></i>&nbsp;2020-07-25
           </div>
         
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+              <a href="/categories/gradle/">gradle</a>
             
           </div>
         
         
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/07/15/%E9%97%AE/" target="_self">
-          <img src="http://image.wonear.space/20180429070534_bpfvj.jpg" srcset="/img/loading.gif" alt="问">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/07/15/%E9%97%AE/">问</a>
-
-      <a href="/2020/07/15/%E9%97%AE/" class="index-excerpt">
-        
-        
-          
-        
-        <div>问他们笑你，你便不敢？害怕失去，你便不愿？你想拥有一切，却为何要畏手畏脚？为何你骨子里要带着优柔？
-</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-07-15
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
             
-              <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+              <a href="/tags/android/">android</a>
             
           </div>
-        
         
       </div>
     </div>
