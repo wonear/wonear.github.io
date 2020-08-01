@@ -151,7 +151,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      659 字
+      662 字
     </span>
   
 
@@ -200,10 +200,9 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <blockquote>
-<h3 id="1-gradle自定义常量的原因"><a href="#1-gradle自定义常量的原因" class="headerlink" title="1. gradle自定义常量的原因"></a>1. gradle自定义常量的原因</h3><p>在多module中，gradle文件里存在大量常量，而且基本上是相同的。在项目或者依赖库版本升级的时候，修改起来十分的不友好。一两个module时可能无所谓，但是正常开发中可能涉及到十几个module的情况，一方面是修改起来十分不友好，工作量太大，一方面可能出现漏改的情况，导致依赖冲突、打包失败等的问题。这个时候就可以通过自定义全局常量来改变这种情况。</p>
-<h3 id="2-自定义常量的方法"><a href="#2-自定义常量的方法" class="headerlink" title="2. 自定义常量的方法"></a>2. 自定义常量的方法</h3><p>gradle可以通过ext来自定义常量，要做到常量共用的话，就要在根节点下的build.gradle文件中进行常量定义。</p>
-<h4 id="写法1"><a href="#写法1" class="headerlink" title="写法1"></a>写法1</h4><pre><code class="hljs groovy">buildscript &#123;
+              <h3 id="1-gradle自定义常量的原因"><a href="#1-gradle自定义常量的原因" class="headerlink" title="1. gradle自定义常量的原因"></a>1. gradle自定义常量的原因</h3><p> 在多module中，gradle文件里存在大量常量，而且基本上是相同的。在项目或者依赖库版本升级的时候，修改起来十分的不友好。一两个module时可能无所谓，但是正常开发中可能涉及到十几个module的情况，一方面是修改起来十分不友好，工作量太大，一方面可能出现漏改的情况，导致依赖冲突、打包失败等的问题。这个时候就可以通过自定义全局常量来改变这种情况。</p>
+<h3 id="2-自定义常量的方法"><a href="#2-自定义常量的方法" class="headerlink" title="2. 自定义常量的方法"></a>2. 自定义常量的方法</h3><p> gradle可以通过ext来自定义常量，要做到常量共用的话，就要在根节点下的build.gradle文件中进行常量定义。</p>
+<h4 id="写法1"><a href="#写法1" class="headerlink" title="写法1"></a>写法1</h4> <pre><code class="hljs groovy">buildscript &#123;
 
     repositories &#123;
         google()
@@ -246,9 +245,9 @@ ext &#123;
     ]
 &#125;</code></pre>
 
-<p>直接在build.gradle中进行定义，这种方式在自定义常量太多时，看起来似乎不太舒服，而且根结点的gradle中经常需要配置一些其他的东西，可能导致整个文件一大堆代码。所以还可以用插件的方式单独进行常量定义</p>
-<h4 id="写法2"><a href="#写法2" class="headerlink" title="写法2"></a>写法2</h4><p>在根目录下创建一个common.gradle文件（文件名称随意）专门用来定义常量</p>
-<pre><code class="hljs groovy">ext &#123;
+<p> 直接在build.gradle中进行定义，这种方式在自定义常量太多时，看起来似乎不太舒服，而且根结点的gradle中经常需要配置一些其他的东西，可能导致整个文件一大堆代码。所以还可以用插件的方式单独进行常量定义</p>
+<h4 id="写法2"><a href="#写法2" class="headerlink" title="写法2"></a>写法2</h4><p> 在根目录下创建一个common.gradle文件（文件名称随意）专门用来定义常量</p>
+ <pre><code class="hljs groovy">ext &#123;
     android = [
 <span class="hljs-symbol">            compileSdkVersion:</span> <span class="hljs-number">29</span>,
 <span class="hljs-symbol">            buildToolsVersion:</span> <span class="hljs-string">"29.0.2"</span>,
@@ -268,8 +267,8 @@ ext &#123;
     ]
 &#125;</code></pre>
 
-<p>然后在根节点下的build.gradle中添加 <strong>apply from: file(‘common.gradle’)</strong></p>
-<pre><code class="hljs groovy">apply <span class="hljs-string">from:</span> file(<span class="hljs-string">'common.gradle'</span>)
+<p> 然后在根节点下的build.gradle中添加 <strong>apply from: file(‘common.gradle’)</strong></p>
+ <pre><code class="hljs groovy">apply <span class="hljs-string">from:</span> file(<span class="hljs-string">'common.gradle'</span>)
 buildscript &#123;
 
     repositories &#123;
@@ -293,7 +292,7 @@ task clean(<span class="hljs-string">type:</span> Delete) &#123;
     delete rootProject.buildDir
 &#125;</code></pre>
 
-<h3 id="3-使用常量的方法"><a href="#3-使用常量的方法" class="headerlink" title="3. 使用常量的方法"></a>3. 使用常量的方法</h3><pre><code class="hljs groovy">apply <span class="hljs-string">plugin:</span> <span class="hljs-string">'com.android.application'</span>
+<h3 id="3-使用常量的方法"><a href="#3-使用常量的方法" class="headerlink" title="3. 使用常量的方法"></a>3. 使用常量的方法</h3> <pre><code class="hljs groovy">apply <span class="hljs-string">plugin:</span> <span class="hljs-string">'com.android.application'</span>
 
 android &#123;
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -325,8 +324,7 @@ dependencies &#123;
     androidTestImplementation libs.libTestEspresso
 &#125;</code></pre>
 
-<p>跟未修改前的代码对比一下，修改后的看起来简直不能太爽。</p>
-</blockquote>
+<p> 跟未修改前的代码对比一下，修改后的看起来简直不能太爽。</p>
 
             </article>
             <hr>

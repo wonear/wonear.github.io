@@ -17,10 +17,19 @@
   <meta name="description" content="知识无限，当恒学之！">
   <meta name="author" content="wonear">
   <meta name="keywords" content="">
-  <title>归档 - Inn</title>
+  <title>视图动画之scale - Inn</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/idea.min.css" />
+  
+
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -128,6 +137,48 @@
             </span>
 
             
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-08-01 10:50">
+      2020年8月1日 上午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      361 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
           
@@ -138,67 +189,167 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 6 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/2020/08/01/%E8%A7%86%E5%9B%BE%E5%8A%A8%E7%94%BB%E4%B9%8Bscale/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">视图动画之scale</span>
-      <span style="float: right;">08-01</span>
-    </a>
-  
-    
-    <a href="/2020/07/25/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Android项目中资源文件分模块的方法</span>
-      <span style="float: right;">07-25</span>
-    </a>
-  
-    
-    <a href="/2020/07/25/app%E5%86%85%E5%9B%BE%E7%89%87%E7%81%B0%E8%89%B2%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">app内图片灰色效果实现</span>
-      <span style="float: right;">07-25</span>
-    </a>
-  
-    
-    <a href="/2020/07/25/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">EasyPermissions使用问题</span>
-      <span style="float: right;">07-25</span>
-    </a>
-  
-    
-    <a href="/2020/07/25/gradle%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E9%85%8D%E7%BD%AE/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">使用gradle-properties来定义gradle常量</span>
-      <span style="float: right;">07-25</span>
-    </a>
-  
-    
-    <a href="/2020/07/25/%E4%BD%BF%E7%94%A8gradle-properties%E6%9D%A5%E5%AE%9A%E4%B9%89gradle%E5%B8%B8%E9%87%8F/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">使用gradle-properties来定义gradle常量</span>
-      <span style="float: right;">07-25</span>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <h1 id="scale动画"><a href="#scale动画" class="headerlink" title="scale动画"></a>scale动画</h1><h3 id="1-属性信息"><a href="#1-属性信息" class="headerlink" title="1. 属性信息"></a>1. 属性信息</h3><ul>
+<li><strong>duration：</strong>设置动画执行的时间，单位事毫秒</li>
+<li><strong>fromXScale：</strong>动画起始时控件x轴的伸缩比率</li>
+<li><strong>fromYScale：</strong>动画起始时控件y轴的伸缩比率</li>
+<li><strong>toXScale：</strong>动画在控件x轴要伸缩的最终比例</li>
+<li><strong>toYScale：</strong>动画在控件y轴要伸缩的最终比例</li>
+<li><strong>pivotX：</strong>动画开始的位置中心x坐标</li>
+<li><strong>pivotY：</strong>动画开始的位置中心y坐标</li>
+</ul>
+<p><strong><u>pivotX和pivotY的取值可以是数值，百分比和百分比p(例如50,50%,50%p)。</u></strong></p>
+<ol>
+<li>数值：表示动画开始相对于父控件内的偏移位置作为动画起点</li>
+<li>百分比：表示相对动画控件内部的位置作为动画起点</li>
+<li>百分比p：表示相对于动画控件的父控件的位置作为动画起点</li>
+</ol>
+<h3 id="2-加载方法"><a href="#2-加载方法" class="headerlink" title="2. 加载方法"></a>2. 加载方法</h3><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> animal = AnimationUtils.loadAnimation(<span class="hljs-keyword">this</span>, R.anim.scale)
+imageView.startAnimation(animal)</code></pre>
+
+
+
+<h3 id="3-效果"><a href="#3-效果" class="headerlink" title="3. 效果"></a>3. 效果</h3><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">scale</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">'2000'</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromXScale</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromYScale</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotX</span>=<span class="hljs-string">"50"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotY</span>=<span class="hljs-string">"50"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toXScale</span>=<span class="hljs-string">"1.5"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toYScale</span>=<span class="hljs-string">"1.5"</span>/&gt;</span></code></pre>
+
+<p><img src="http://image.wonear.space/scale2.gif" srcset="/img/loading.gif" alt=""></p>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">scale</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">'2000'</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromXScale</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromYScale</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotX</span>=<span class="hljs-string">"50%"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotY</span>=<span class="hljs-string">"50%"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toXScale</span>=<span class="hljs-string">"1.5"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toYScale</span>=<span class="hljs-string">"1.5"</span>/&gt;</span></code></pre>
+
+<p><img src="http://image.wonear.space/scale3.gif" srcset="/img/loading.gif" alt=""></p>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">scale</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">'2000'</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromXScale</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromYScale</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotX</span>=<span class="hljs-string">"50%p"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotY</span>=<span class="hljs-string">"50%p"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toXScale</span>=<span class="hljs-string">"1.5"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toYScale</span>=<span class="hljs-string">"1.5"</span>/&gt;</span></code></pre>
+
+<p><img src="http://image.wonear.space/scale4.gif" srcset="/img/loading.gif" alt=""></p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%8A%A8%E7%94%BB/">动画</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/android/">android</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章转载请注明出处！http://blog.wonear.space/</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/25/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/">
+                        <span class="hidden-mobile">Android项目中资源文件分模块的方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "ApndltnPxnom9YC3sLOP1ov5-gzGzoHsz",
+          app_key: "Oxxm9mF7VBsWOcU80WoJT9uQ",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
 
 
               </div>
-            </div>
+            
           </div>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
   </main>
 
@@ -416,10 +567,10 @@
       }
 
       // 如果是文章，请求文章的浏览数，并自增
-      if ('false' === 'true') {
+      if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/archives/index.html');
+          var target = decodeURI('/2020/08/01/%E8%A7%86%E5%9B%BE%E5%8A%A8%E7%94%BB%E4%B9%8Bscale/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -481,6 +632,31 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -488,7 +664,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "视图动画之scale&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -503,6 +679,21 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
 
 
   <script  src="/js/local-search.js" ></script>
@@ -516,6 +707,20 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
 
 
