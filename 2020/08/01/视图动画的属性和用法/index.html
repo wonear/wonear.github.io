@@ -17,7 +17,7 @@
   <meta name="description" content="知识无限，当恒学之！">
   <meta name="author" content="wonear">
   <meta name="keywords" content="">
-  <title>视图动画之scale - Inn</title>
+  <title>视图动画的属性和用法 - Inn</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -151,7 +151,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      361 字
+      959 字
     </span>
   
 
@@ -161,7 +161,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      14
        分钟
     </span>
   
@@ -200,27 +200,88 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h1 id="scale动画"><a href="#scale动画" class="headerlink" title="scale动画"></a>scale动画</h1><h3 id="1-属性信息"><a href="#1-属性信息" class="headerlink" title="1. 属性信息"></a>1. 属性信息</h3><ul>
-<li><strong>duration：</strong>设置动画执行的时间，单位事毫秒</li>
-<li><strong>fromXScale：</strong>动画起始时控件x轴的伸缩比率</li>
-<li><strong>fromYScale：</strong>动画起始时控件y轴的伸缩比率</li>
-<li><strong>toXScale：</strong>动画在控件x轴要伸缩的最终比例</li>
-<li><strong>toYScale：</strong>动画在控件y轴要伸缩的最终比例</li>
-<li><strong>pivotX：</strong>动画开始的位置中心x坐标</li>
-<li><strong>pivotY：</strong>动画开始的位置中心y坐标</li>
-</ul>
+              <h1 id="补间动画"><a href="#补间动画" class="headerlink" title="补间动画"></a>补间动画</h1><h2 id="一-公共属性"><a href="#一-公共属性" class="headerlink" title="一. 公共属性"></a>一. 公共属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>fillAfter</strong></td>
+<td>保持动画结束时候的状态</td>
+</tr>
+<tr>
+<td><strong>fillBefore</strong></td>
+<td>动画执行完毕后还原到初始状态</td>
+</tr>
+<tr>
+<td><strong>duration</strong></td>
+<td>设置动画执行的时间，单位毫秒</td>
+</tr>
+<tr>
+<td><strong>fillEnabled</strong></td>
+<td>和fillBefore的效果相同</td>
+</tr>
+<tr>
+<td><strong>repeatMode</strong></td>
+<td>设定动画的重复类型<strong>reverse|restart</strong>，reverse倒序回放，restart是重新执行，要和repeatCount一起使用才能看到效果</td>
+</tr>
+<tr>
+<td><strong>repeatCount</strong></td>
+<td>指定动画执行次数，设置为infinite时，表示无限次执行</td>
+</tr>
+<tr>
+<td><strong>interpolator</strong></td>
+<td>设定动画差值器</td>
+</tr>
+</tbody></table>
+<p><strong>公共属性适用于所有的补间动画</strong></p>
+<p><strong>加载方法</strong></p>
+<pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> animal = AnimationUtils.loadAnimation(<span class="hljs-keyword">this</span>, R.anim.scale)
+imageView.startAnimation(animal)</code></pre>
+
+
+
+<h2 id="二-scale动画（伸缩变化）"><a href="#二-scale动画（伸缩变化）" class="headerlink" title="二. scale动画（伸缩变化）"></a>二. scale动画（伸缩变化）</h2><h3 id="1-属性信息"><a href="#1-属性信息" class="headerlink" title="1. 属性信息"></a>1. 属性信息</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>fromXScale</strong></td>
+<td>动画起始时控件x轴的伸缩比率</td>
+</tr>
+<tr>
+<td><strong>fromYScale</strong></td>
+<td>动画起始时控件y轴的伸缩比率</td>
+</tr>
+<tr>
+<td><strong>toXScale</strong></td>
+<td>动画在控件x轴要伸缩的最终比例</td>
+</tr>
+<tr>
+<td><strong>toYScale</strong></td>
+<td>动画在控件y轴要伸缩的最终比例</td>
+</tr>
+<tr>
+<td><strong>pivotX</strong></td>
+<td>动画开始的位置中心x坐标</td>
+</tr>
+<tr>
+<td><strong>pivotY</strong></td>
+<td>动画开始的位置中心y坐标</td>
+</tr>
+</tbody></table>
 <p><strong><u>pivotX和pivotY的取值可以是数值，百分比和百分比p(例如50,50%,50%p)。</u></strong></p>
 <ol>
 <li>数值：表示动画开始相对于父控件内的偏移位置作为动画起点</li>
 <li>百分比：表示相对动画控件内部的位置作为动画起点</li>
 <li>百分比p：表示相对于动画控件的父控件的位置作为动画起点</li>
 </ol>
-<h3 id="2-加载方法"><a href="#2-加载方法" class="headerlink" title="2. 加载方法"></a>2. 加载方法</h3><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> animal = AnimationUtils.loadAnimation(<span class="hljs-keyword">this</span>, R.anim.scale)
-imageView.startAnimation(animal)</code></pre>
-
-
-
-<h3 id="3-效果"><a href="#3-效果" class="headerlink" title="3. 效果"></a>3. 效果</h3><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">scale</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">'2000'</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:fromXScale</span>=<span class="hljs-string">"0"</span></span>
@@ -231,6 +292,7 @@ imageView.startAnimation(animal)</code></pre>
 <span class="hljs-tag">    <span class="hljs-attr">android:toYScale</span>=<span class="hljs-string">"1.5"</span>/&gt;</span></code></pre>
 
 <p><img src="http://image.wonear.space/scale2.gif" srcset="/img/loading.gif" alt=""></p>
+<hr>
 <pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">scale</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">'2000'</span></span>
@@ -242,6 +304,7 @@ imageView.startAnimation(animal)</code></pre>
 <span class="hljs-tag">    <span class="hljs-attr">android:toYScale</span>=<span class="hljs-string">"1.5"</span>/&gt;</span></code></pre>
 
 <p><img src="http://image.wonear.space/scale3.gif" srcset="/img/loading.gif" alt=""></p>
+<hr>
 <pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">scale</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">'2000'</span></span>
@@ -253,6 +316,149 @@ imageView.startAnimation(animal)</code></pre>
 <span class="hljs-tag">    <span class="hljs-attr">android:toYScale</span>=<span class="hljs-string">"1.5"</span>/&gt;</span></code></pre>
 
 <p><img src="http://image.wonear.space/scale4.gif" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<h2 id="三-alpha动画（透明度变化）"><a href="#三-alpha动画（透明度变化）" class="headerlink" title="三. alpha动画（透明度变化）"></a>三. alpha动画（透明度变化）</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>fromAlpha</strong></td>
+<td>动画开始时的透明度0.0–1.0</td>
+</tr>
+<tr>
+<td><strong>toAlpha</strong></td>
+<td>动画结束时的透明度0.0–1.0</td>
+</tr>
+</tbody></table>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">alpha</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromAlpha</span>=<span class="hljs-string">"1"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">"2000"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toAlpha</span>=<span class="hljs-string">"0.1"</span> /&gt;</span></code></pre>
+
+<p><img src="http://image.wonear.space/alpha.gif" srcset="/img/loading.gif" alt=""></p>
+<h2 id="四-rotate动画（旋转变化）"><a href="#四-rotate动画（旋转变化）" class="headerlink" title="四. rotate动画（旋转变化）"></a>四. rotate动画（旋转变化）</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>fromDegrees</strong></td>
+<td>动画开始旋转时的角度设置</td>
+</tr>
+<tr>
+<td><strong>toDegrees</strong></td>
+<td>动画结束时旋转到的角度</td>
+</tr>
+<tr>
+<td><strong>pivotX</strong></td>
+<td>旋转中心的x坐标</td>
+</tr>
+<tr>
+<td><strong>pivotY</strong></td>
+<td>旋转中心的y坐标</td>
+</tr>
+</tbody></table>
+<p><strong>pivotX，pivotY可以设置数值、百分比、百分比p三种样式</strong></p>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">rotate</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">"2000"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromDegrees</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotX</span>=<span class="hljs-string">"50%"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotY</span>=<span class="hljs-string">"50%"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toDegrees</span>=<span class="hljs-string">"360"</span> /&gt;</span></code></pre>
+
+<p><img src="http://image.wonear.space/rotate5453531236577676.gif" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">rotate</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">"2000"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromDegrees</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotX</span>=<span class="hljs-string">"50"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotY</span>=<span class="hljs-string">"50"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toDegrees</span>=<span class="hljs-string">"360"</span> /&gt;</span></code></pre>
+
+<p><img src="http://image.wonear.space/rotate5453531236652324.gif" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">rotate</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">"2000"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromDegrees</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotX</span>=<span class="hljs-string">"50%p"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:pivotY</span>=<span class="hljs-string">"50%p"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toDegrees</span>=<span class="hljs-string">"360"</span> /&gt;</span></code></pre>
+
+<p><img src="http://image.wonear.space/rotate5453531236652222.gif" srcset="/img/loading.gif" alt=""></p>
+<h2 id="五-translate动画（平移变化）"><a href="#五-translate动画（平移变化）" class="headerlink" title="五. translate动画（平移变化）"></a>五. translate动画（平移变化）</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>fromXDelta</strong></td>
+<td>平移起点的x坐标值</td>
+</tr>
+<tr>
+<td><strong>fromYDelta</strong></td>
+<td>平移起点的y坐标值</td>
+</tr>
+<tr>
+<td><strong>toXDelta</strong></td>
+<td>平移结束的x坐标值</td>
+</tr>
+<tr>
+<td><strong>toYDelta</strong></td>
+<td>平移结束的y坐标值</td>
+</tr>
+</tbody></table>
+<p>translate的属性都可以设置数值、百分比、百分比p三种样式，作用和scale动画中的类似</p>
+<ol>
+<li>具体数值</li>
+</ol>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">translate</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">"2000"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromXDelta</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromYDelta</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toXDelta</span>=<span class="hljs-string">"150"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toYDelta</span>=<span class="hljs-string">"150"</span> /&gt;</span></code></pre>
+
+<p><img src="http://image.wonear.space/translate5453531236652222.gif" srcset="/img/loading.gif" alt="具体数值"></p>
+<hr>
+<ol start="2">
+<li>相对自身位置</li>
+</ol>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">translate</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">"2000"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromXDelta</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromYDelta</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toXDelta</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toYDelta</span>=<span class="hljs-string">"100%"</span> /&gt;</span></code></pre>
+
+<p><img src="http://image.wonear.space/translate54535331236652221.gif" srcset="/img/loading.gif" alt="相对自身位置"></p>
+<hr>
+<ol start="3">
+<li>相对父控件位置</li>
+</ol>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">translate</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">"2000"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromXDelta</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:fromYDelta</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toXDelta</span>=<span class="hljs-string">"0"</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:toYDelta</span>=<span class="hljs-string">"100%p"</span> /&gt;</span></code></pre>
+
+
+
+<p><img src="http://image.wonear.space/translate5453533123665444.gif" srcset="/img/loading.gif" alt="相对父控件位置"></p>
 
             </article>
             <hr>
@@ -570,7 +776,7 @@ imageView.startAnimation(animal)</code></pre>
       if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/2020/08/01/%E8%A7%86%E5%9B%BE%E5%8A%A8%E7%94%BB%E4%B9%8Bscale/');
+          var target = decodeURI('/2020/08/01/%E8%A7%86%E5%9B%BE%E5%8A%A8%E7%94%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E7%94%A8%E6%B3%95/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -664,7 +870,7 @@ imageView.startAnimation(animal)</code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "视图动画之scale&nbsp;",
+        "视图动画的属性和用法&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
