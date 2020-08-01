@@ -151,7 +151,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      954 字
+      1.1k 字
     </span>
   
 
@@ -161,7 +161,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14
+      16
        分钟
     </span>
   
@@ -233,7 +233,7 @@
 </tr>
 <tr>
 <td><strong>interpolator</strong></td>
-<td>设定动画差值器</td>
+<td>设定动画插值器</td>
 </tr>
 </tbody></table>
 <p><strong>公共属性适用于所有的补间动画</strong></p>
@@ -459,6 +459,60 @@ imageView.startAnimation(animal)</code></pre>
 
 
 <p><img src="http://image.wonear.space/translate5453533123665444.gif" srcset="/img/loading.gif" alt="相对父控件位置"></p>
+<h2 id="六-动画插值器说明"><a href="#六-动画插值器说明" class="headerlink" title="六.动画插值器说明"></a>六.动画插值器说明</h2><table>
+<thead>
+<tr>
+<th>xml</th>
+<th>类</th>
+<th>效果说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@android:anim/accelerate_decelerate_interpolator</td>
+<td>AccelerateDecelerateInterpolator</td>
+<td>开始结束比较慢，中间快</td>
+</tr>
+<tr>
+<td>@android:anim/accelerate_interpolator</td>
+<td>AccelerateInterpolator</td>
+<td>开始慢，越来越快</td>
+</tr>
+<tr>
+<td>@android:anim/anticipate_interpolator</td>
+<td>AnticipateInterpolator</td>
+<td>先稍微向反方向，然后执行设定动画</td>
+</tr>
+<tr>
+<td>@android:anim/anticipate_overshoot_interpolator</td>
+<td>AnticipateOvershootInterpolator</td>
+<td>先稍微向反方向，然后执行设定动画，最后在稍微反方向</td>
+</tr>
+<tr>
+<td>@android:anim/bounce_interpolator</td>
+<td>BounceInterpolator</td>
+<td>弹跳效果</td>
+</tr>
+<tr>
+<td>@android:anim/cycle_interpolator</td>
+<td>CycleInterpolator</td>
+<td>循环插值器（来回执行）</td>
+</tr>
+<tr>
+<td>@android:anim/decelerate_interpolator</td>
+<td>DecelerateInterpolator</td>
+<td>开始快，越来越慢</td>
+</tr>
+<tr>
+<td>@android:anim/linear_interpolator</td>
+<td>LinearInterpolator</td>
+<td>匀速</td>
+</tr>
+<tr>
+<td>@android:anim/overshoot_interpolator</td>
+<td>OvershootInterpolator</td>
+<td>结束偏移插值器，动画结束时在沿着动画方向继续运动一小段</td>
+</tr>
+</tbody></table>
 
             </article>
             <hr>
