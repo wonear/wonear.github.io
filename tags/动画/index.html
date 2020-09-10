@@ -17,7 +17,7 @@
   <meta name="description" content="知识无限，当恒学之！">
   <meta name="author" content="wonear">
   <meta name="keywords" content="">
-  <title>Inn</title>
+  <title>标签 - 动画 - Inn</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -147,327 +147,20 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-
-  <div class="row mx-auto index-card">
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
     
+      
+      <p class="h5">2020</p>
     
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/09/10/Palette%E5%BA%93%E8%8E%B7%E5%8F%96%E9%A2%9C%E8%89%B2%E4%B8%BB%E8%89%B2%E8%B0%83/">Palette库获取颜色主色调</a>
-
-      <a href="/2020/09/10/Palette%E5%BA%93%E8%8E%B7%E5%8F%96%E9%A2%9C%E8%89%B2%E4%B8%BB%E8%89%B2%E8%B0%83/" class="index-excerpt">
-        
-        
-          
-        
-        <div>palette翻译中文意思为 调色板、主色调，涉及到颜色读取的需求，一般都能使用。
-调色板取色库依赖
-&gt;implementation 'androidx.palette:palette-ktx:1.0.0'
-
-这个库的内容很少，用起来也很简单，做下简单记录。
-使用方式有两种，同步方式和异步方式，使用的方法在Palette类的顶部注释里
-
-主要方法调用
-获取图片中的颜色值getSwatches</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-09-10
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/android/">android</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E9%A2%9C%E8%89%B2/">颜色</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/08/01/%E8%A1%A5%E9%97%B4%E5%8A%A8%E7%94%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E7%94%A8%E6%B3%95/">补间动画的属性和用法</a>
-
-      <a href="/2020/08/01/%E8%A1%A5%E9%97%B4%E5%8A%A8%E7%94%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E7%94%A8%E6%B3%95/" class="index-excerpt">
-        
-        
-          
-        
-        <div>补间动画一. 公共属性
-
-
-属性
-说明
-
-
-
-fillAfter
-保持动画结束时候的状态
-
-
-fillBefore
-动画执行完毕后还原到初始状态
-
-
-duration
-设置动画执行的时间，单位毫秒
-
-
-fillEnabled
-和fillBefore的效果相同
-
-
-repeatMode
-设定动画的重复类型reverse|restart，reverse倒序回放，restart是重新执行，要和repea</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-08-01
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/android/">android</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%8A%A8%E7%94%BB/">动画</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/07/25/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/">Android项目中资源文件分模块的方法</a>
-
-      <a href="/2020/07/25/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/" class="index-excerpt">
-        
-        
-          
-        
-        <div>在之前的项目开发中一直有个困扰，当项目做大时，各种文件数量就变得非常多，很多时候找一个文件就要找很久，包名下的代码文件可以自己建包来做区分，还好办一点，但是资源文件，像布局、图片、样式这些没有模块化，经常忘记名字然后找半天找不到。实在是造成很多困扰，后面才发现可以利用gradle来进行资源的模块化处理。
-资源分模块做起来其实很简单
-修改app模块下的build.gradle文件，在android闭</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-07-25
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/android/">android</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/gradle/">gradle</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/07/25/app%E5%86%85%E5%9B%BE%E7%89%87%E7%81%B0%E8%89%B2%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/">app内图片灰色效果实现</a>
-
-      <a href="/2020/07/25/app%E5%86%85%E5%9B%BE%E7%89%87%E7%81%B0%E8%89%B2%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/" class="index-excerpt">
-        
-        
-          
-        
-        <div>2020年是令人难忘的一年，新型肺炎的肆虐，给全国人民带来了巨大的灾难。所幸国内的疫情已经受到控制，这次事件值得人们铭记。可以说这次国内能这么快控制住情况，起最大作用的是国家政府的英明决策和前线人员舍生忘死的战斗。向他们致以最高的敬意。
-为悼念新型肺炎牺牲的人员，清明节当天，几乎全网大厂app内效果都变成灰色，作为一个程序员，很好奇一个app是怎么做到全局改变显示效果的。偶然看懂鸿洋的一篇博客，简</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-07-25
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/android/">android</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%95%88%E6%9E%9C/">效果</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/07/25/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/">EasyPermissions使用问题</a>
-
-      <a href="/2020/07/25/EasyPermissions%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/" class="index-excerpt">
-        
-        
-          
-        
-        <div>1. 遇到的问题描述在启动界面使用EasyPermissions，这个界面有用到权限的申请，但是第一次拒绝权限后（未勾选不再提醒），下次再发起权限请求时，EasyPermissions的询问弹窗出现占满屏幕且背景颜色异常的迷一样的问题。但是在其他界面发起权限请求并不会出现这个问题。
-2. 出现的问题效果图片
-3. 问题分析和解决一开始并没有去查看其他界面的弹窗效果，一直以为是EasyPermiss</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-07-25
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/android/">android</a>
-            
-          </div>
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/07/25/gradle%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E9%85%8D%E7%BD%AE/">使用gradle-properties来定义gradle常量</a>
-
-      <a href="/2020/07/25/gradle%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E9%85%8D%E7%BD%AE/" class="index-excerpt">
-        
-        
-          
-        
-        <div>1. gradle自定义常量的原因 在多module中，gradle文件里存在大量常量，而且基本上是相同的。在项目或者依赖库版本升级的时候，修改起来十分的不友好。一两个module时可能无所谓，但是正常开发中可能涉及到十几个module的情况，一方面是修改起来十分不友好，工作量太大，一方面可能出现漏改的情况，导致依赖冲突、打包失败等的问题。这个时候就可以通过自定义全局常量来改变这种情况。
-2. 自</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-07-25
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/android/">android</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/gradle/">gradle</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/07/25/%E4%BD%BF%E7%94%A8gradle-properties%E6%9D%A5%E5%AE%9A%E4%B9%89gradle%E5%B8%B8%E9%87%8F/">使用gradle-properties来定义gradle常量</a>
-
-      <a href="/2020/07/25/%E4%BD%BF%E7%94%A8gradle-properties%E6%9D%A5%E5%AE%9A%E4%B9%89gradle%E5%B8%B8%E9%87%8F/" class="index-excerpt">
-        
-        
-          
-        
-        <div>gradle.properties文件中定义的变量只能是key=value的形式，相比ext扩展变量的方式多了些局限性。
-类举编译版本号的定义和使用1. 定义方式定义变量方式直接在gradle.properties添加
-#测试字段
-testKey=false
-COMPILESDKVERSION=29
-BUILDTOOLSVERSION=29.0.2
-
-2. 使用方式compileSdkVersio</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-07-25
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/android/">android</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/gradle/">gradle</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-
+    <a href="/2020/08/01/%E8%A1%A5%E9%97%B4%E5%8A%A8%E7%94%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E7%94%A8%E6%B3%95/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">补间动画的属性和用法</span>
+      <span style="float: right;">08-01</span>
+    </a>
+  
+</div>
 
 
 
@@ -696,7 +389,7 @@ BUILDTOOLSVERSION=29.0.2
       if ('false' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/index.html');
+          var target = decodeURI('/tags/%E5%8A%A8%E7%94%BB/index.html');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -765,7 +458,7 @@ BUILDTOOLSVERSION=29.0.2
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "老王记事栈&nbsp;",
+        "标签 - 动画&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
